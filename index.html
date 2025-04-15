@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías. Descubre mis proyectos y habilidades.">
-    <meta name="keywords" content="Paul Contreras, desarrollador web, portfolio, HTML, CSS, JavaScript, proyectos, desarrollo web, frontend, Mexico">
+    <meta name="description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías. Descubre mis proyectos y habilidades.">onal.">
+    <meta name="keywords" content="Paul Contreras, desarrollador web, portfolio, HTML, CSS, JavaScript, proyectos, desarrollo web, frontend, Mexico">arrollo web, frontend, Mexico, ingeniero en sistemas computacionales">
     <meta name="author" content="Paul Eduardo Contreras Lobato">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dexterpol-a21.github.io/">
-    <meta property="og:title" content="Paul Eduardo Contreras - Portfolio de Desarrollo Web">
-    <meta property="og:description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías.">
+    <meta property="og:title" content="Paul Eduardo Contreras - Portfolio de Desarrollo Web">o Web">
+    <meta property="og:description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías.">nd avanzadas.">
     <meta property="og:image" content="https://dexterpol-a21.github.io/img/profile.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://dexterpol-a21.github.io/">
-    <meta property="twitter:title" content="Paul Eduardo Contreras - Portfolio de Desarrollo Web">
-    <meta property="twitter:description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías.">
+    <meta property="twitter:title" content="Paul Eduardo Contreras - Portfolio de Desarrollo Web">o Web">
+    <meta property="twitter:description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías.">nd avanzadas.">
     <meta property="twitter:image" content="https://dexterpol-a21.github.io/img/profile.jpg">
     
     <!-- Favicon -->
@@ -262,7 +262,7 @@
                                 <a href="tel:+123456789" class="contact-link">
                                     <i class="fas fa-phone"></i> +12 345 6789
                                 </a>
-                                <a href="https://www.linkedin.com/in/tu-perfil" class="contact-link">
+                                <a href="https://www.linkedin.com/in/paul-eduardo-contreras-lobato-b021901b9" class="contact-link">
                                     <i class="fab fa-linkedin"></i> LinkedIn
                                 </a>
                                 <a href="https://github.com/Dexterpol-A21" class="contact-link">
@@ -302,7 +302,7 @@
                 <div class="footer-logo">Paul<span>Contreras</span></div>
                 <div class="footer-social">
                     <a href="https://github.com/Dexterpol-A21" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/paul-contreras-lobato-495b82232/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
                 <p class="footer-text">© 2023 Paul Eduardo Contreras Lobato. Todos los derechos reservados.</p>
@@ -316,43 +316,28 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Paul Eduardo Contreras Lobato",
+        "givenName": "Paul Eduardo",
+        "familyName": "Contreras Lobato",
         "url": "https://dexterpol-a21.github.io/",
+        "image": "https://dexterpol-a21.github.io/img/profile.jpg",
         "jobTitle": "Desarrollador Web",
         "sameAs": [
             "https://github.com/Dexterpol-A21",
-            "https://www.linkedin.com/in/tu-perfil/"
+            "https://www.linkedin.com/in/paul-contreras-lobato-495b82232/"
         ],
-        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Web Development"]
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Web Development", "Responsive Design", "UI/UX Design"],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Universidad Tecnológica"
+        },
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance"
+        }
     }
     </script>
     
     <!-- JavaScript -->
-    <script>
-        // Mobile navigation toggle
-        const navSlide = () => {
-            const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-links');
-            const navLinks = document.querySelectorAll('.nav-links li');
-            
-            burger.addEventListener('click', () => {
-                // Toggle Nav
-                nav.classList.toggle('nav-active');
-                
-                // Animate Links
-                navLinks.forEach((link, index) => {
-                    if (link.style.animation) {
-                        link.style.animation = '';
-                    } else {
-                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                    }
-                });
-                
-                // Burger Animation
-                burger.classList.toggle('toggle');
-            });
-        };
-        
-        navSlide();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
