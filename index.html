@@ -1,48 +1,358 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mi portafolio personal">
-    <meta name="keywords" content="portafolio, proyectos, contacto">
-    <meta name="author" content="Tu Nombre">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías. Descubre mis proyectos y habilidades.">
+    <meta name="keywords" content="Paul Contreras, desarrollador web, portfolio, HTML, CSS, JavaScript, proyectos, desarrollo web, frontend, Mexico">
+    <meta name="author" content="Paul Eduardo Contreras Lobato">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dexterpol-a21.github.io/">
+    <meta property="og:title" content="Paul Eduardo Contreras - Portfolio de Desarrollo Web">
+    <meta property="og:description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías.">
+    <meta property="og:image" content="https://dexterpol-a21.github.io/img/profile.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dexterpol-a21.github.io/">
+    <meta property="twitter:title" content="Paul Eduardo Contreras - Portfolio de Desarrollo Web">
+    <meta property="twitter:description" content="Portfolio profesional de Paul Eduardo Contreras Lobato, desarrollador web con experiencia en HTML, CSS, JavaScript y más tecnologías.">
+    <meta property="twitter:image" content="https://dexterpol-a21.github.io/img/profile.jpg">
+    
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
-    <title>Mi Portafolio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dexterpol-a21.github.io/">
+    
+    <title>Paul Eduardo Contreras | Desarrollador Web</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Mi Portafolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">Paul<span>Contreras</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                    <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
     </header>
-    <section id="about">
-        <h2>Sobre Mí</h2>
-        <p>Hola, soy [Tu Nombre], un desarrollador web con experiencia en HTML, CSS y JavaScript.</p>
-    </section>
-    <section id="projects">
-        <h2>Proyectos</h2>
-        <div class="project">
-            <h3>Proyecto 1</h3>
-            <p>Descripción del proyecto 1.</p>
-        </div>
-        <div class="project">
-            <h3>Proyecto 2</h3>
-            <p>Descripción del proyecto 2.</p>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contacto</h2>
-        <p>Puedes contactarme a través de mi correo electrónico: <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
-    </section>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Paul Eduardo Contreras Lobato</h1>
+                <h2>Desarrollador Web & Diseñador UI/UX</h2>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Contáctame</a>
+                    <a href="PaulEContrerasLobato_CV.pdf" class="btn btn-secondary" download>Descargar CV</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="bento-section">
+            <div class="container">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="bento-grid">
+                    <div class="bento-item large">
+                        <div class="bento-content">
+                            <h3>¿Quién soy?</h3>
+                            <p>Soy Paul Eduardo Contreras Lobato, un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales. Mi objetivo es combinar diseño innovador con código limpio para construir sitios web y aplicaciones que destaquen.</p>
+                            <p>Actualmente me especializo en desarrollo frontend con experiencia en HTML, CSS y JavaScript, y continúo expandiendo mis habilidades en frameworks modernos como React y tecnologías backend.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item medium">
+                        <div class="bento-content">
+                            <h3>Educación</h3>
+                            <ul class="education-list">
+                                <li>
+                                    <span class="degree">Ingeniería en Sistemas Computacionales</span>
+                                    <span class="institution">Universidad Tecnológica</span>
+                                    <span class="year">2019 - 2023</span>
+                                </li>
+                                <li>
+                                    <span class="degree">Certificación Web Development</span>
+                                    <span class="institution">Platzi</span>
+                                    <span class="year">2021</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bento-item small">
+                        <div class="bento-content">
+                            <h3>Hobbies</h3>
+                            <div class="hobbies-icons">
+                                <div class="hobby"><i class="fas fa-code"></i> <span>Coding</span></div>
+                                <div class="hobby"><i class="fas fa-book"></i> <span>Lectura</span></div>
+                                <div class="hobby"><i class="fas fa-hiking"></i> <span>Trekking</span></div>
+                                <div class="hobby"><i class="fas fa-gamepad"></i> <span>Gaming</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="bento-section">
+            <div class="container">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="bento-grid">
+                    <div class="bento-item medium">
+                        <div class="bento-content">
+                            <h3>Frontend</h3>
+                            <div class="skills-list">
+                                <div class="skill">
+                                    <span>HTML5</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill">
+                                    <span>CSS3/SASS</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                                </div>
+                                <div class="skill">
+                                    <span>JavaScript</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                                </div>
+                                <div class="skill">
+                                    <span>React</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item small">
+                        <div class="bento-content">
+                            <h3>Diseño</h3>
+                            <div class="skills-list">
+                                <div class="skill">
+                                    <span>Figma</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                                </div>
+                                <div class="skill">
+                                    <span>Adobe XD</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item small">
+                        <div class="bento-content">
+                            <h3>Backend</h3>
+                            <div class="skills-list">
+                                <div class="skill">
+                                    <span>Node.js</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                                </div>
+                                <div class="skill">
+                                    <span>SQL</span>
+                                    <div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item medium">
+                        <div class="bento-content">
+                            <h3>Herramientas y Otras</h3>
+                            <div class="tools-grid">
+                                <span class="tool-badge">Git</span>
+                                <span class="tool-badge">GitHub</span>
+                                <span class="tool-badge">VS Code</span>
+                                <span class="tool-badge">Webpack</span>
+                                <span class="tool-badge">npm</span>
+                                <span class="tool-badge">Responsive Design</span>
+                                <span class="tool-badge">SEO</span>
+                                <span class="tool-badge">Terminal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="bento-section">
+            <div class="container">
+                <h2 class="section-title">Proyectos</h2>
+                <div class="bento-grid">
+                    <div class="bento-item large project-card">
+                        <img src="https://via.placeholder.com/600x400" alt="Proyecto 1" class="project-image">
+                        <div class="bento-content">
+                            <h3>Proyecto 1</h3>
+                            <p>Una aplicación web para gestión de tareas construida con React y Firebase. Incluye autenticación de usuarios y almacenamiento en tiempo real.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Firebase</span>
+                                <span>CSS Modules</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item medium project-card">
+                        <img src="https://via.placeholder.com/400x300" alt="Proyecto 2" class="project-image">
+                        <div class="bento-content">
+                            <h3>Proyecto 2</h3>
+                            <p>Sitio web responsivo para una cafetería local con integración de mapas y formulario de contacto.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item medium project-card">
+                        <img src="https://via.placeholder.com/400x300" alt="Proyecto 3" class="project-image">
+                        <div class="bento-content">
+                            <h3>Proyecto 3</h3>
+                            <p>Aplicación de clima que consume una API externa para mostrar pronósticos detallados con visualizaciones dinámicas.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>API</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="bento-section">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="bento-grid">
+                    <div class="bento-item medium">
+                        <div class="bento-content">
+                            <h3>Hablemos</h3>
+                            <p>¿Interesado en trabajar juntos o tienes alguna pregunta? Estaré encantado de escucharte. ¡Contáctame a través de cualquiera de estos medios!</p>
+                            <div class="contact-links">
+                                <a href="mailto:tu.email@ejemplo.com" class="contact-link">
+                                    <i class="fas fa-envelope"></i> tu.email@ejemplo.com
+                                </a>
+                                <a href="tel:+123456789" class="contact-link">
+                                    <i class="fas fa-phone"></i> +12 345 6789
+                                </a>
+                                <a href="https://www.linkedin.com/in/tu-perfil" class="contact-link">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                                <a href="https://github.com/Dexterpol-A21" class="contact-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item large">
+                        <div class="bento-content">
+                            <h3>Envíame un mensaje</h3>
+                            <form class="contact-form" action="#" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Mensaje</label>
+                                    <textarea id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
     <footer>
-        <p>&copy; 2024 Mi Portafolio</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Paul<span>Contreras</span></div>
+                <div class="footer-social">
+                    <a href="https://github.com/Dexterpol-A21" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="footer-text">© 2023 Paul Eduardo Contreras Lobato. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Paul Eduardo Contreras Lobato",
+        "url": "https://dexterpol-a21.github.io/",
+        "jobTitle": "Desarrollador Web",
+        "sameAs": [
+            "https://github.com/Dexterpol-A21",
+            "https://www.linkedin.com/in/tu-perfil/"
+        ],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Web Development"]
+    }
+    </script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile navigation toggle
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            
+            burger.addEventListener('click', () => {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+                
+                // Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                // Burger Animation
+                burger.classList.toggle('toggle');
+            });
+        };
+        
+        navSlide();
+    </script>
 </body>
 </html>
