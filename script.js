@@ -32,6 +32,8 @@ class PortfolioApp {
         this.setupAccessibility();
         this.setupPerformanceOptimizations();
         this.setupPhoneClipboard();
+        // Show success/error message after FormSubmit redirect
+        this.showSubmissionResultFromURL();
         this.isLoaded = true;
         
         // Dispatch custom event when app is ready
@@ -346,39 +348,55 @@ class PortfolioApp {
         const form = document.getElementById('contact-form');
         if (!form) return;
 
+        const isFormSubmit = form.action && form.action.includes('formsubmit.co');
+
         form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
-            
-            // Basic validation
+
+            // Client-side validation
             if (!this.validateForm(data)) {
+                e.preventDefault();
                 return;
             }
 
+            // If using FormSubmit, allow native submit (no preventDefault)
+            if (isFormSubmit) {
+                // Optionally enrich the email subject using the user's subject
+                const hiddenSubject = form.querySelector('input[name="_subject"]');
+                if (hiddenSubject && data.subject) {
+                    hiddenSubject.value = `Portfolio: ${data.subject}`;
+                }
+                // Show a quick loading state while the browser posts the form
+                const submitButton = form.querySelector('button[type="submit"]');
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                }
+                return; // proceed with normal form submission
+            }
+
+            // Fallback (no action URL): simulate submission
+            e.preventDefault();
             const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.innerHTML;
-            
+            const originalText = submitButton?.innerHTML;
+
             try {
-                // Show loading state
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitButton.disabled = true;
-                
-                // Simulate form submission (replace with actual endpoint)
+                if (submitButton) {
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitButton.disabled = true;
+                }
                 await this.simulateFormSubmission(data);
-                
-                // Show success message
                 this.showNotification('Message sent successfully!', 'success');
                 form.reset();
-                
             } catch (error) {
                 console.error('Form submission error:', error);
                 this.showNotification('Failed to send message. Please try again.', 'error');
             } finally {
-                // Reset button state
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
+                if (submitButton && originalText) {
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                }
             }
         });
 
