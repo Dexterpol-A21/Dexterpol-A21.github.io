@@ -2,166 +2,135 @@
 
 A modern, responsive portfolio website showcasing my skills as a Systems Engineering student and Junior Fullstack Developer. Built with clean code principles, accessibility in mind, and featuring a sophisticated black and white design system.
 
-## 🚀 Live Demo
+🚀 **Live Demo**
 
-Visit the live portfolio: [https://dexterpol-a21.github.io/](https://dexterpol-a21.github.io/)
+Visit the live portfolio: https://dexterpol-a21.github.io/
 
-## 🎨 Design & Features
+🎨 **Design & Features**
 
-### Modern Black & White Design System
-- Professional monochromatic color palette with strategic gray tones
-- Clean, minimalist interface focusing on content and usability
-- Typography using Inter and JetBrains Mono fonts for optimal readability
+* **Modern Black & White Design System**
+    * Professional monochromatic color palette with strategic gray tones.
+    * Clean, minimalist interface focusing on content and usability.
+    * Typography using Inter and JetBrains Mono fonts for optimal readability.
+* **Advanced Features**
+    * **Fully Responsive:** Optimized for mobile, tablet, and desktop devices.
+    * **Smooth Animations:** CSS transitions, floating elements, and scroll-triggered animations.
+    * **Interactive Elements:** Animated skill bars, hover effects, and form validation.
+    * **Performance Optimized:** Lazy loading, efficient CSS, and optimized JavaScript.
+    * **SEO Enhanced:** Structured data, meta tags, and semantic HTML.
 
-### Advanced Features
-- **Fully Responsive**: Optimized for mobile, tablet, and desktop devices
-- **Smooth Animations**: CSS transitions, floating elements, and scroll-triggered animations
-- **Interactive Elements**: Animated skill bars, hover effects, and form validation
-- **Performance Optimized**: Lazy loading, efficient CSS, and optimized JavaScript
-- **SEO Enhanced**: Structured data, meta tags, and semantic HTML
-- **Technology Showcase**: Floating tech cards featuring modern tools and frameworks
+♿ **Accessibility**
 
-### Technologies Showcased
-- **Frontend**: HTML, CSS, JavaScript, React
-- **Backend**: Python, SQL, Node.js
-- **Tools**: Git, Jira, Docker
-- **Marketing**: Google Tag Manager (GTM), SEM
-- **Methodologies**: Agile, Scrum
-- **Infrastructure**: Networking, Cloud Services
+* Built with accessibility best practices in mind.
+* Keyboard navigation support.
+* Screen reader optimizations considered.
+* Focus management.
+* Reduced motion support implemented.
 
-### Accessibility
-- WCAG 2.1 compliant design
-- Keyboard navigation support
-- Screen reader optimizations
-- Focus management and skip links
-- Reduced motion support for users who prefer it
+🛠️ **Technologies Used**
 
-## 🛠️ Technologies Used
+* **Frontend**
+    * **HTML5:** Semantic markup with proper structure.
+    * **CSS3:** Modern features including CSS Grid, Flexbox, and CSS Variables.
+    * **JavaScript (ES6+):** Modern JavaScript patterns for interactivity and dynamic content.
+    * **Font Awesome:** Professional icons.
+    * **Google Fonts:** Inter and JetBrains Mono typography.
+* **Development Tools**
+    * **Git/GitHub:** Version control and hosting.
+    * **VS Code:** Development environment.
+    * **Browser DevTools:** Testing and debugging.
 
-### Frontend
-- **HTML5**: Semantic markup with proper structure
-- **CSS3**: Modern features including CSS Grid, Flexbox, and CSS Variables
-- **JavaScript ES6+**: Class-based architecture with modern features
-- **Font Awesome**: Professional icons
-- **Google Fonts**: Inter and JetBrains Mono typography
+📋 **Sections**
 
-### Development Tools
-- **Git/GitHub**: Version control and hosting
-- **VS Code**: Development environment
-- **Browser DevTools**: Testing and debugging
+* **Hero Section:** Centered introduction with floating tech elements.
+* **About Me:** Personal information, education, and key statistics.
+* **Work Experience:** Professional timeline with achievements.
+* **Technical Skills:** Categorized skills with progress indicators.
+* **Featured Projects:** Portfolio of key projects and accomplishments.
+* **Contact:** Multiple ways to get in touch with form validation.
 
-## 📋 Sections
+🔧 **Key Features**
 
-1. **Hero Section**: Centered introduction with floating tech elements
-2. **About Me**: Personal information, education, and key statistics
-3. **Work Experience**: Professional timeline with achievements
-4. **Technical Skills**: Categorized skills with progress indicators
-5. **Featured Projects**: Portfolio of key projects and accomplishments
-6. **Contact**: Multiple ways to get in touch with form validation
+* **Performance**
+    * Optimized images and assets.
+    * Efficient CSS with minimal redundancy.
+    * JavaScript performance optimizations.
+    * Lazy loading for non-critical resources.
+* **User Experience**
+    * Intuitive navigation with smooth scrolling.
+    * Mobile-first responsive design.
+    * Fast loading times.
+    * Clear visual hierarchy.
+* **Developer Experience**
+    * Clean, maintainable code structure.
+    * Comprehensive commenting where necessary.
+    * Modular CSS architecture.
 
-## 🔧 Key Features
+🎯 **Professional Highlights**
 
-### Performance
-- Optimized images and assets
-- Efficient CSS with minimal redundancy
-- JavaScript performance optimizations
-- Lazy loading for non-critical resources
+* Systems Engineering Student at Universidad del Valle de México.
+* **95% Customer Satisfaction** rate achieved in professional roles.
+* **25-50% Efficiency Improvements** delivered through automation solutions.
+* Bilingual Proficiency in Spanish (Native C2) and English (Proficient C2).
+* Proven experience working effectively in remote environments with international companies.
 
-### User Experience
-- Intuitive navigation with smooth scrolling
-- Mobile-first responsive design
-- Fast loading times
-- Clear visual hierarchy
+💼 **Professional Experience**
 
-### Developer Experience
-- Clean, maintainable code structure
-- Comprehensive commenting
-- Modular CSS architecture
-- Modern JavaScript patterns
+* **Human Quality (for Language Line Solutions)** - Bilingual Interpreter (OPI)
+    * Provide real-time interpretation averaging 30+ critical calls daily across 12+ sectors (emergency, legal, medical, etc.).
+    * Ensure accurate communication in high-pressure 911 and crisis hotline scenarios.
+    * Handle sensitive PII following strict confidentiality protocols.
+* **BISCC (for Virtix Health)** - Record Retrieval Agent (Jan 2025 - Jun 2025)
+    * Managed 85+ daily calls ensuring HIPAA compliance.
+    * Reduced error rates by 20% through process streamlining.
+    * Developed a browser extension improving agent efficiency by 25-50%.
+* **Telvista (for ABG Group)** - Customer Service & Sales Agent (Oct 2022 - Oct 2024)
+    * Achieved 95% customer satisfaction score handling 60+ daily calls.
+    * Provided global car-rental support and consistently exceeded sales targets.
 
-## 🎯 Professional Highlights
+📈 **Future Goals**
 
-- **Systems Engineering Student** at Universidad del Valle de México
-- **95% Customer Satisfaction** rate in professional roles
-- **25-50% Efficiency Improvements** through automation solutions
-- **Bilingual Proficiency** in Spanish and English
-- **Remote Work Experience** with international companies
+* Complete B.Sc. in Computer Systems Engineering.
+* Expand expertise in modern web frameworks (e.g., React, Node.js).
+* Contribute meaningfully to open-source projects.
+* Pursue certifications in cloud technologies (AWS, Azure, or GCP).
 
-## 💼 Professional Experience
+📧 **Contact Information**
 
-### BISCC - Record Retrieval Agent (Jan 2025 - Jun 2025)
-- Managed 85+ daily calls with HIPAA compliance
-- Reduced error rates by 20% through process improvements
-- Developed browser extension improving efficiency by 25-50%
+* **Email:** paulconlob@gmail.com
+* **Phone:** +52 55 2118 3664
+* **Location:** Estado de México, México
+* **GitHub:** [@Dexterpol-A21](https://github.com/Dexterpol-A21)
+* **LinkedIn:** [Paul Contreras Lobato](YourLinkedInProfileURL) *(<-- Asegúrate de poner tu URL aquí)*
 
-### Telvista - Customer Service & Sales Agent (Oct 2022 - Oct 2024)
-- Achieved 95% customer satisfaction score
-- Handled 60+ daily calls for global car rental support
-- Consistently exceeded sales targets
+🚀 **Getting Started (For Development/Viewing Code)**
 
-## 📈 Future Goals
+1.  Clone this repository:
+    ```bash
+    git clone [https://github.com/Dexterpol-A21/Dexterpol-A21.github.io.git](https://github.com/Dexterpol-A21/Dexterpol-A21.github.io.git)
+    ```
+2.  Open `index.html` in your browser or serve with a local server.
+3.  Customize the content by editing the HTML, CSS, and JavaScript files.
 
-- Complete Systems Engineering degree
-- Expand expertise in modern web frameworks
-- Contribute to open-source projects
-- Pursue advanced certifications in cloud technologies
+📱 **Browser Support**
 
-## 📧 Contact Information
+* Chrome (latest)
+* Firefox (latest)
+* Safari (latest)
+* Edge (latest)
+* iOS Safari
+* Chrome Mobile
 
-- **Email**: paulconlob@gmail.com
-- **Phone**: +52 55 2118 3664
-- **Location**: Estado de México, México
-- **GitHub**: [@Dexterpol-A21](https://github.com/Dexterpol-A21)
-- **LinkedIn**: [Paul Contreras Lobato](https://www.linkedin.com/in/paul-contreras-lobato-495b82232/)
+🎓 **Educational Background**
 
-## 🚀 Getting Started
+* **B.Sc. in Computer Systems Engineering** - Universidad del Valle de México (Expected Dec 2027)
+* **High School Diploma** - Universidad del Valle de México (2022)
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Dexterpol-A21/Dexterpol-A21.github.io.git
-   ```
+📄 **License**
 
-2. Open `index.html` in your browser or serve with a local server
-
-3. Customize the content by editing the HTML, CSS, and JavaScript files
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- iOS Safari
-- Chrome Mobile
-
-## 🎓 Educational Background
-
-- **B.Sc. in Computer Systems Engineering** - Universidad del Valle de México (Expected Dec 2027)
-- **High School Diploma** - Universidad del Valle de México (2022)
-
-## 💼 Professional Experience
-
-### BISCC - Record Retrieval Agent (Jan 2025 - Jun 2025)
-- Managed 85+ daily calls with HIPAA compliance
-- Reduced error rates by 20% through process improvements
-- Developed browser extension improving efficiency by 25-50%
-
-### Telvista - Customer Service & Sales Agent (Oct 2022 - Oct 2024)
-- Achieved 95% customer satisfaction score
-- Handled 60+ daily calls for global car rental support
-- Consistently exceeded sales targets
-
-## 📈 Future Goals
-
-- Complete Systems Engineering degree
-- Expand expertise in modern web frameworks
-- Contribute to open-source projects
-- Pursue advanced certifications in cloud technologies
-
-## 📄 License
-
-This project is available as open source under the [MIT License](LICENSE).
+The code for this project is available as open source under the [MIT License](LICENSE). *(<-- Asegúrate de tener un archivo LICENSE si mencionas esto)*
 
 ---
 
-*Built with passion for clean code and user-centric design by Paul Eduardo Contreras Lobato*
+Built with passion for clean code and user-centric design by Paul Eduardo Contreras Lobato.
+© 2025 Paul Eduardo Contreras Lobato. All Rights Reserved.
