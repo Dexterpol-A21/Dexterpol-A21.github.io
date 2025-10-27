@@ -76,10 +76,10 @@
             <!-- Toggle Controls -->
             <div class="hero__controls">
                 <button class="control-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="material-symbols-outlined">dark_mode</span>
+                    <i class="fas fa-moon" data-theme-icon aria-hidden="true"></i>
                 </button>
                 <button class="control-btn language-toggle" id="language-toggle" aria-label="Switch language">
-                    <span class="material-symbols-outlined">translate</span>
+                    <i class="fas fa-language" aria-hidden="true"></i>
                 </button>
             </div>
 
@@ -339,8 +339,40 @@
             <div class="container">
                 <h2 class="section__title" data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</h2>
                 <div class="projects__grid">
+                    <!-- GoodPins - Featured Project -->
                     <div class="project-card">
-                        <i class="fas fa-puzzle-piece project-card__type-icon" aria-label="Browser Extension"></i>
+                        <img src="svg/extensions.svg" alt="Browser Extension" class="project-card__type-icon">
+                        <div class="project-card__image">
+                            <img src="projects/img/goodPinsLogoLight.png" alt="GoodPins Chrome Extension" loading="lazy">
+                            <img src="projects/img/goodPinsLogodark.png" alt="GoodPins Chrome Extension" loading="lazy">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title" data-en="GoodPins: Bookmark Manager Chrome Extension" data-es="GoodPins: Extensión de Chrome para Gestión de Marcadores">GoodPins: Bookmark Manager Chrome Extension</h3>
+                            <p class="project-card__description" data-en="Developed a Chrome extension for fast, visual bookmark management built entirely with vanilla JavaScript. Features a custom drag-and-drop grid for reorganizing pins and folders, chrome.storage persistence with JSON import/export, and dynamic modals for theme and layout customization without reloads." data-es="Desarrollé una extensión de Chrome para gestión rápida y visual de marcadores, construida íntegramente con JavaScript puro. Incluye un grid de arrastrar y soltar hecho desde cero para reorganizar pines y carpetas, persistencia con chrome.storage con funciones de importación/exportación JSON, y modales dinámicos para personalizar temas y columnas sin recargar.">
+                                Developed a Chrome extension for fast, visual bookmark management built entirely with vanilla JavaScript. Features a custom drag-and-drop grid for reorganizing pins and folders, chrome.storage persistence with JSON import/export, and dynamic modals for theme and layout customization without reloads.
+                            </p>
+                            <div class="project-card__tech">
+                                <span>JavaScript</span>
+                                <span>Chrome APIs</span>
+                                <span>HTML/CSS</span>
+                                <span>Local Storage</span>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://chromewebstore.google.com/detail/goodpins/placeholder" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> <span data-en="Live Demo" data-es="Demo en Vivo">Live Demo</span>
+                                </a>
+                                <a href="https://github.com/Dexterpol-A21/goodPins" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> <span data-en="GitHub" data-es="GitHub">GitHub</span>
+                                </a>
+                                <a href="projects/goodpins.html" class="project-link">
+                                    <i class="fas fa-book-open"></i> <span data-en="View Details" data-es="Ver Detalles">View Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="svg/extensions.svg" alt="Browser Extension" class="project-card__type-icon">
                         <div class="project-card__image">
                             <img src="img/goodNotes.png" alt="GoodNotes Helper Chrome Extension" loading="lazy">
                         </div>
@@ -364,7 +396,7 @@
                     </div>
                     
                     <div class="project-card">
-                        <i class="fas fa-globe project-card__type-icon" aria-label="Website"></i>
+                        <img src="svg/website.svg" alt="Website" class="project-card__type-icon">
                         <div class="project-card__image">
                             <img src="img/gabis.png" alt="Gabis Restaurant Website" loading="lazy">
                         </div>
@@ -388,7 +420,7 @@
                     </div>
                     
                     <div class="project-card">
-                        <i class="fas fa-globe project-card__type-icon" aria-label="Website"></i>
+                        <img src="svg/website.svg" alt="Website" class="project-card__type-icon">
                         <div class="project-card__image">
                             <img src="img/doctorEnCasa.png" alt="Doctor en Casa Website" loading="lazy">
                         </div>
@@ -412,7 +444,7 @@
                     </div>
 
                     <div class="project-card">
-                        <i class="fas fa-globe project-card__type-icon" aria-label="Website"></i>
+                        <img src="svg/website.svg" alt="Website" class="project-card__type-icon">
                         <div class="project-card__image">
                             <img src="img/helleskin.png" alt="Helleskin Website" loading="lazy">
                         </div>

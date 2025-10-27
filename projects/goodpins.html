@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="GoodPins - A powerful Chrome extension for organizing and managing bookmarks with advanced features like folders, drag-and-drop, and keyboard shortcuts.">
+    <meta name="keywords" content="GoodPins, Chrome Extension, Bookmark Manager, Paul Contreras, Browser Extension, Productivity Tool">
+    <meta name="author" content="Paul Eduardo Contreras Lobato">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="favicon/favicon.ico" sizes="32x32">
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="canonical" href="https://dexterpol-a21.github.io/projects/goodpins.html">
+    
+    <title>GoodPins - Chrome Extension | Paul Eduardo Contreras Lobato</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=translate,dark_mode,light_mode" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar__brand">
+            <a href="../index.html" class="sidebar__logo">P<span>ECL</span></a>
+        </div>
+        
+        <ul class="sidebar__links">
+            <li><a href="#hero" class="sidebar__link" data-tooltip="Home"><i class="fas fa-home"></i></a></li>
+            <li><a href="#overview" class="sidebar__link" data-tooltip="Overview"><i class="fas fa-info-circle"></i></a></li>
+            <li><a href="#features" class="sidebar__link" data-tooltip="Features"><i class="fas fa-star"></i></a></li>
+            <li><a href="#code" class="sidebar__link" data-tooltip="Code"><i class="fas fa-code"></i></a></li>
+            <li><a href="#architecture" class="sidebar__link" data-tooltip="Architecture"><i class="fas fa-sitemap"></i></a></li>
+            <li><a href="#roadmap" class="sidebar__link" data-tooltip="Roadmap"><i class="fas fa-route"></i></a></li>
+            <li><a href="#installation" class="sidebar__link" data-tooltip="Installation"><i class="fas fa-download"></i></a></li>
+        </ul>
+        
+        <div class="sidebar__progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </nav>
+
+    <main id="main" class="main-content">
+        <!-- Project Hero Section -->
+        <section class="project-hero" id="hero">
+            <!-- Toggle Controls -->
+            <div class="hero__controls">
+                <button class="control-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" data-theme-icon aria-hidden="true"></i>
+                </button>
+                <button class="control-btn language-toggle" id="language-toggle" aria-label="Switch language">
+                    <i class="fas fa-language" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="container">
+                <div class="project-hero__content">
+                    <a href="../index.html#projects" class="back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-en="Back to Projects" data-es="Volver a Proyectos">Back to Projects</span>
+                    </a>
+                    
+                    <div class="project-hero__header">
+                        <div class="project-icon">
+                            <img src="img/goodPinsIconLightNoBackGround.PNG" alt="GoodPins Icon" class="project-icon-img project-icon-img--light">
+                            <img src="img/goodPinsIconDarkNoBackground.PNG" alt="GoodPins Icon" class="project-icon-img project-icon-img--dark">
+                        </div>
+                        <div class="project-hero__title-group">
+                            <h1 class="project-hero__title" data-en="GoodPins" data-es="GoodPins">GoodPins</h1>
+                            <p class="project-hero__subtitle" data-en="Chrome Extension for Bookmark Management" data-es="Extensión de Chrome para Gestión de Marcadores">Chrome Extension for Bookmark Management</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-hero__meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-en="Oct 2025 - Present" data-es="Oct 2025 - Presente">Oct 2025 - Present</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-code"></i>
+                            <span>JavaScript, HTML, CSS</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-users"></i>
+                            <span data-en="Personal Project" data-es="Proyecto Personal">Personal Project</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-hero__links">
+                        <a href="https://chromewebstore.google.com/detail/goodpins/placeholder" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                            <img src="../svg/extensions.svg" alt="GoodPins" class="btn-icon">
+                            <span data-en="View in Chrome Store" data-es="Ver en Chrome Store">View in Chrome Store</span>
+                        </a>
+                        <a href="https://github.com/Dexterpol-A21/goodPins" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                            <i class="fab fa-github"></i>
+                            <span data-en="View on GitHub" data-es="Ver en GitHub">View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Overview Section -->
+        <section class="section project-overview" id="overview">
+            <div class="container">
+                <h2 class="section__title" data-en="Overview" data-es="Descripción General">Overview</h2>
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <p data-en="GoodPins is a Chrome extension engineered for developers who demand control over their bookmark workflow. The UI layer is driven entirely by vanilla JavaScript, backed by modular controllers that orchestrate drag-and-drop interactions, theme switching, and state hydration without relying on third-party frameworks. Every interaction is designed to feel native to Chrome thanks to the extension action service worker and a purpose-built popup experience." data-es="GoodPins es una extensión de Chrome diseñada para desarrolladores que requieren control absoluto sobre su flujo de marcadores. La capa de UI está impulsada completamente con JavaScript puro, respaldada por controladores modulares que orquestan interacciones de arrastrar y soltar, cambio de tema e hidratación de estado sin depender de frameworks externos. Cada interacción se siente nativa de Chrome gracias al service worker de la acción de extensión y una experiencia popup hecha a medida.">
+                            GoodPins is a Chrome extension engineered for developers who demand control over their bookmark workflow. The UI layer is driven entirely by vanilla JavaScript, backed by modular controllers that orchestrate drag-and-drop interactions, theme switching, and state hydration without relying on third-party frameworks. Every interaction is designed to feel native to Chrome thanks to the extension action service worker and a purpose-built popup experience.
+                        </p>
+                        <p data-en="Data is persisted through the chrome.storage API with real-time synchronization between popup sessions, while JSON import/export utilities give power users a versionable configuration file. A dynamic modal system controls layout options (columns, density) and six CSS-variable themes, all applied instantly without reloads. The result is a lightweight yet robust productivity tool that highlights mastery of Chrome APIs, state management, and UI engineering." data-es="Los datos se persisten mediante la API chrome.storage con sincronización en tiempo real entre sesiones del popup, mientras que las utilidades de importación/exportación JSON brindan a los usuarios avanzados un archivo de configuración versionable. Un sistema de modales dinámicos controla opciones de layout (columnas, densidad) y seis temas basados en variables CSS, aplicados al instante sin recargas. El resultado es una herramienta de productividad ligera pero robusta que destaca dominio de las APIs de Chrome, gestión de estado e ingeniería de interfaces.">
+                            Data is persisted through the chrome.storage API with real-time synchronization between popup sessions, while JSON import/export utilities give power users a versionable configuration file. A dynamic modal system controls layout options (columns, density) and six CSS-variable themes, all applied instantly without reloads. The result is a lightweight yet robust productivity tool that highlights mastery of Chrome APIs, state management, and UI engineering.
+                        </p>
+                    </div>
+                    <div class="overview-stats">
+                        <div class="stat-card">
+                            <div class="stat-card__icon">
+                                <i class="fab fa-chrome"></i>
+                            </div>
+                            <div class="stat-card__number" data-en="Chrome APIs" data-es="APIs de Chrome">Chrome APIs</div>
+                            <div class="stat-card__label" data-en="Storage, tabs, commands, and contextual actions powering every interaction." data-es="Storage, tabs, commands y acciones contextuales impulsan cada interacción.">
+                                Storage, tabs, commands, and contextual actions powering every interaction.
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="stat-card__number" data-en="Stateful UI" data-es="UI con Estado">Stateful UI</div>
+                            <div class="stat-card__label" data-en="chrome.storage sync + JSON import/export keep layouts, themes, and pinned items persistent." data-es="chrome.storage sync + importación/exportación JSON mantienen layouts, temas y pines persistentes.">
+                                chrome.storage sync + JSON import/export keep layouts, themes, and pinned items persistent.
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="stat-card__number">100%</div>
+                            <div class="stat-card__label" data-en="Vanilla JavaScript - zero frameworks, pure DOM manipulation and event handling for optimal performance." data-es="JavaScript Puro - cero frameworks, manipulación pura del DOM y manejo de eventos para rendimiento óptimo.">Vanilla JavaScript - zero frameworks, pure DOM manipulation and event handling for optimal performance.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="section project-features" id="features">
+            <div class="container">
+                <h2 class="section__title" data-en="Key Features" data-es="Características Clave">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                        <h3 class="feature-card__title" data-en="Folder Organization" data-es="Organización en Carpetas">Folder Organization</h3>
+                        <p class="feature-card__description" data-en="Create nested folders to organize your bookmarks hierarchically with unlimited depth." data-es="Crea carpetas anidadas para organizar tus marcadores jerárquicamente con profundidad ilimitada.">
+                            Create nested folders to organize your bookmarks hierarchically with unlimited depth.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-hand-rock"></i>
+                        </div>
+                        <h3 class="feature-card__title" data-en="Drag & Drop" data-es="Arrastrar y Soltar">Drag & Drop</h3>
+                        <p class="feature-card__description" data-en="Intuitive drag-and-drop interface for quick bookmark reorganization." data-es="Interfaz intuitiva de arrastrar y soltar para reorganización rápida de marcadores.">
+                            Intuitive drag-and-drop interface for quick bookmark reorganization.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-keyboard"></i>
+                        </div>
+                        <h3 class="feature-card__title" data-en="Keyboard Shortcuts" data-es="Atajos de Teclado">Keyboard Shortcuts</h3>
+                        <p class="feature-card__description" data-en="Assign custom keyboard shortcuts (Alt+Shift+1-3) to your favorite bookmarks and folders." data-es="Asigna atajos de teclado personalizados (Alt+Shift+1-3) a tus marcadores y carpetas favoritos.">
+                            Assign custom keyboard shortcuts (Alt+Shift+1-3) to your favorite bookmarks and folders.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3 class="feature-card__title" data-en="Color Tagging" data-es="Etiquetado de Colores">Color Tagging</h3>
+                        <p class="feature-card__description" data-en="Visual organization with 8 predefined color tags for easy categorization." data-es="Organización visual con 8 etiquetas de color predefinidas para fácil categorización.">
+                            Visual organization with 8 predefined color tags for easy categorization.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="feature-card__title" data-en="Multiple Themes" data-es="Múltiples Temas">Multiple Themes</h3>
+                        <p class="feature-card__description" data-en="Choose from 6 beautiful themes: Midnight, Ocean, Forest, Sunset, Lavender, and Rose." data-es="Elige entre 6 hermosos temas: Medianoche, Océano, Bosque, Atardecer, Lavanda y Rosa.">
+                            Choose from 6 beautiful themes: Midnight, Ocean, Forest, Sunset, Lavender, and Rose.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-thumbtack"></i>
+                        </div>
+                        <h3 class="feature-card__title" data-en="Pin Position" data-es="Posición Fija">Pin Position</h3>
+                        <p class="feature-card__description" data-en="Lock important bookmarks in place to prevent accidental reorganization." data-es="Bloquea marcadores importantes en su lugar para prevenir reorganización accidental.">
+                            Lock important bookmarks in place to prevent accidental reorganization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Overview Section -->
+        <section class="section project-features-overview">
+            <div class="container">
+                <h2 class="section__title" data-en="Features Overview" data-es="Descripción de Características">Features Overview</h2>
+                
+                <!-- Folder Organization -->
+                <div class="feature-showcase">
+                    <div class="feature-showcase__content">
+                        <div class="feature-showcase__icon">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                        <h3 class="feature-showcase__title" data-en="Folder Organization" data-es="Organización en Carpetas">Folder Organization</h3>
+                        <p class="feature-showcase__description" data-en="Create and manage nested folders with unlimited depth. Each folder can contain bookmarks and sub-folders, allowing you to organize your links exactly how you want. Folders display the number of items they contain and support custom icons." data-es="Crea y gestiona carpetas anidadas con profundidad ilimitada. Cada carpeta puede contener marcadores y subcarpetas, permitiéndote organizar tus enlaces exactamente como quieras. Las carpetas muestran el número de elementos que contienen y soportan íconos personalizados.">
+                            Create and manage nested folders with unlimited depth. Each folder can contain bookmarks and sub-folders, allowing you to organize your links exactly how you want. Folders display the number of items they contain and support custom icons.
+                        </p>
+                    </div>
+                    <div class="feature-showcase__demo">
+                        <div class="browser-mockup">
+                            <div class="browser-mockup__header">
+                                <div class="browser-mockup__dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="browser-mockup__title">GoodPins</div>
+                            </div>
+                            <div class="browser-mockup__content">
+                                <img src="img/feature-folders.png" alt="Folder Organization Feature" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drag & Drop -->
+                <div class="feature-showcase feature-showcase--reverse">
+                    <div class="feature-showcase__content">
+                        <div class="feature-showcase__icon">
+                            <i class="fas fa-hand-rock"></i>
+                        </div>
+                        <h3 class="feature-showcase__title" data-en="Drag & Drop Interface" data-es="Interfaz de Arrastrar y Soltar">Drag & Drop Interface</h3>
+                        <p class="feature-showcase__description" data-en="Effortlessly reorganize your bookmarks and folders with intuitive drag-and-drop functionality. Simply click and drag any item to reorder it. Pinned items are protected from accidental moves, ensuring your important links stay in place." data-es="Reorganiza sin esfuerzo tus marcadores y carpetas con funcionalidad intuitiva de arrastrar y soltar. Simplemente haz clic y arrastra cualquier elemento para reordenarlo. Los elementos fijados están protegidos contra movimientos accidentales, asegurando que tus enlaces importantes permanezcan en su lugar.">
+                            Effortlessly reorganize your bookmarks and folders with intuitive drag-and-drop functionality. Simply click and drag any item to reorder it. Pinned items are protected from accidental moves, ensuring your important links stay in place.
+                        </p>
+                    </div>
+                    <div class="feature-showcase__demo">
+                        <div class="browser-mockup">
+                            <div class="browser-mockup__header">
+                                <div class="browser-mockup__dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="browser-mockup__title">GoodPins</div>
+                            </div>
+                            <div class="browser-mockup__content">
+                                <img src="img/feature-dragdrop.png" alt="Drag and Drop Feature" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keyboard Shortcuts -->
+                <div class="feature-showcase">
+                    <div class="feature-showcase__content">
+                        <div class="feature-showcase__icon">
+                            <i class="fas fa-keyboard"></i>
+                        </div>
+                        <h3 class="feature-showcase__title" data-en="Keyboard Shortcuts" data-es="Atajos de Teclado">Keyboard Shortcuts</h3>
+                        <p class="feature-showcase__description" data-en="Boost your productivity with custom keyboard shortcuts. Assign Alt+Shift+1-3 to your most frequently used bookmarks or folders for instant access. Open GoodPins with Alt+Shift+G. Each shortcut displays a badge on the assigned item for easy identification." data-es="Aumenta tu productividad con atajos de teclado personalizados. Asigna Alt+Shift+1-3 a tus marcadores o carpetas más utilizados para acceso instantáneo. Abre GoodPins con Alt+Shift+G. Cada atajo muestra una insignia en el elemento asignado para fácil identificación.">
+                            Boost your productivity with custom keyboard shortcuts. Assign Alt+Shift+1-3 to your most frequently used bookmarks and folders for instant access. Open GoodPins with Alt+Shift+G. Each shortcut displays a badge on the assigned item for easy identification.
+                        </p>
+                    </div>
+                    <div class="feature-showcase__demo">
+                        <div class="browser-mockup">
+                            <div class="browser-mockup__header">
+                                <div class="browser-mockup__dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="browser-mockup__title">GoodPins - Keyboard Shortcuts</div>
+                            </div>
+                            <div class="browser-mockup__content">
+                                <img src="img/feature-shortcuts.png" alt="Keyboard Shortcuts Feature" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Tagging -->
+                <div class="feature-showcase feature-showcase--reverse">
+                    <div class="feature-showcase__content">
+                        <div class="feature-showcase__icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3 class="feature-showcase__title" data-en="Visual Color Tagging" data-es="Etiquetado Visual de Colores">Visual Color Tagging</h3>
+                        <p class="feature-showcase__description" data-en="Organize visually with 8 color-coded tags. Each color represents a category: Priority (Yellow), Work (Orange), Personal (Purple), Education (Pink), Tools (Green), Info (Blue), In Progress (Lime), and Other (Gray). Apply tags to both bookmarks and folders for instant visual recognition." data-es="Organiza visualmente con 8 etiquetas codificadas por colores. Cada color representa una categoría: Prioridad (Amarillo), Trabajo (Naranja), Personal (Morado), Educación (Rosa), Herramientas (Verde), Info (Azul), En Progreso (Lima), y Otro (Gris). Aplica etiquetas tanto a marcadores como a carpetas para reconocimiento visual instantáneo.">
+                            Organize visually with 8 color-coded tags. Each color represents a category: Priority (Yellow), Work (Orange), Personal (Purple), Education (Pink), Tools (Green), Info (Blue), In Progress (Lime), and Other (Gray). Apply tags to both bookmarks and folders for instant visual recognition.
+                        </p>
+                    </div>
+                    <div class="feature-showcase__demo">
+                        <div class="browser-mockup">
+                            <div class="browser-mockup__header">
+                                <div class="browser-mockup__dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="browser-mockup__title">GoodPins - Color Tags</div>
+                            </div>
+                            <div class="browser-mockup__content">
+                                <img src="img/feature-colors.png" alt="Color Tagging Feature" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Themes -->
+                <div class="feature-showcase">
+                    <div class="feature-showcase__content">
+                        <div class="feature-showcase__icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="feature-showcase__title" data-en="Beautiful Themes" data-es="Temas Hermosos">Beautiful Themes</h3>
+                        <p class="feature-showcase__description" data-en="Personalize your experience with 6 carefully crafted themes: Midnight (black), Ocean (blue), Forest (green), Sunset (orange), Lavender (purple), and Rose (pink). Each theme uses CSS variables for instant switching without reloading. Customize grid layout (2, 3, or 4 columns) to match your workflow." data-es="Personaliza tu experiencia con 6 temas cuidadosamente elaborados: Medianoche (negro), Océano (azul), Bosque (verde), Atardecer (naranja), Lavanda (morado) y Rosa (rosa). Cada tema usa variables CSS para cambio instantáneo sin recargar. Personaliza el diseño de la cuadrícula (2, 3 o 4 columnas) para que coincida con tu flujo de trabajo.">
+                            Personalize your experience with 6 carefully crafted themes: Midnight (black), Ocean (blue), Forest (green), Sunset (orange), Lavender (purple), and Rose (pink). Each theme uses CSS variables for instant switching without reloading. Customize grid layout (2, 3, or 4 columns) to match your workflow.
+                        </p>
+                    </div>
+                    <div class="feature-showcase__demo">
+                        <div class="browser-mockup">
+                            <div class="browser-mockup__header">
+                                <div class="browser-mockup__dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="browser-mockup__title">GoodPins - Themes</div>
+                            </div>
+                            <div class="browser-mockup__content">
+                                <img src="img/feature-themes.png" alt="Multiple Themes Feature" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pin Position -->
+                <div class="feature-showcase feature-showcase--reverse">
+                    <div class="feature-showcase__content">
+                        <div class="feature-showcase__icon">
+                            <i class="fas fa-thumbtack"></i>
+                        </div>
+                        <h3 class="feature-showcase__title" data-en="Pin Important Items" data-es="Fijar Elementos Importantes">Pin Important Items</h3>
+                        <p class="feature-showcase__description" data-en="Lock your most important bookmarks and folders in place with the pin feature. Pinned items cannot be dragged or reordered accidentally, ensuring they always stay exactly where you need them. Perfect for frequently accessed links that should remain at the top of your grid." data-es="Bloquea tus marcadores y carpetas más importantes en su lugar con la función de fijar. Los elementos fijados no pueden ser arrastrados o reordenados accidentalmente, asegurando que siempre permanezcan exactamente donde los necesitas. Perfecto para enlaces de acceso frecuente que deben permanecer en la parte superior de tu cuadrícula.">
+                            Lock your most important bookmarks and folders in place with the pin feature. Pinned items cannot be dragged or reordered accidentally, ensuring they always stay exactly where you need them. Perfect for frequently accessed links that should remain at the top of your grid.
+                        </p>
+                    </div>
+                    <div class="feature-showcase__demo">
+                        <div class="browser-mockup">
+                            <div class="browser-mockup__header">
+                                <div class="browser-mockup__dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="browser-mockup__title">GoodPins - Pin Items</div>
+                            </div>
+                            <div class="browser-mockup__content">
+                                <img src="img/feature-pin.png" alt="Pin Position Feature" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Showcase Section -->
+        <section class="section project-code" id="code">
+            <div class="container">
+                <h2 class="section__title" data-en="Code Highlights" data-es="Aspectos Destacados del Código">Code Highlights</h2>
+                
+                <!-- State Hydration & Rendering -->
+                <div class="code-block">
+                    <div class="code-block__header">
+                        <div class="code-block__title">
+                            <i class="fas fa-code"></i>
+                            <span>popup.js - Dynamic Rendering & State Management</span>
+                        </div>
+                        <div class="code-block__description" data-en="Core rendering logic that dynamically generates pins and folders from chrome.storage with real-time updates and proper event handling." data-es="Lógica de renderizado central que genera dinámicamente pines y carpetas desde chrome.storage con actualizaciones en tiempo real y manejo adecuado de eventos.">Core rendering logic that dynamically generates pins and folders from chrome.storage with real-time updates and proper event handling.</div>
+                    </div>
+                    <div class="code-block__content">
+                        <pre><code class="language-javascript">/**
+ * Load pins and settings from Chrome storage and render them
+ */
+function loadPins() {
+  chrome.storage.sync.get(['pins', 'gridColumns', 'theme', 'shortcuts'], (result) => {
+    const pins = result.pins || [];
+    gridColumns = result.gridColumns || 3;
+    currentTheme = result.theme || 'dark';
+    
+    pinsGrid.style.setProperty('--grid-columns', gridColumns);
+    applyTheme(currentTheme);
+    updateGridSizeButtons();
+    updateThemeButtons();
+    renderPins(pins);
+  });
+}
+
+/**
+ * Render all pins/folders to the grid
+ */
+function renderPins(pins) {
+  // Clear existing items
+  document.querySelectorAll('.pin-item, .folder-item').forEach(item => item.remove());
+
+  pins.forEach((pin, index) => {
+    if (pin.type === 'folder') {
+      renderFolder(pin, index);
+    } else {
+      renderPin(pin, index);
+    }
+  });
+  
+  positionAddMenu();
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Drag & Drop Implementation -->
+                <div class="code-block">
+                    <div class="code-block__header">
+                        <div class="code-block__title">
+                            <i class="fas fa-hand-rock"></i>
+                            <span>popup.js - Custom Drag & Drop System</span>
+                        </div>
+                        <div class="code-block__description" data-en="Built-from-scratch drag-and-drop implementation using native browser APIs, with pinned item protection and smooth array reordering." data-es="Implementación de arrastrar y soltar construida desde cero usando APIs nativas del navegador, con protección de elementos fijados y reordenamiento fluido de arrays.">Built-from-scratch drag-and-drop implementation using native browser APIs, with pinned item protection and smooth array reordering.</div>
+                    </div>
+                    <div class="code-block__content">
+                        <pre><code class="language-javascript">function handleDragStart(e) {
+  if (this.classList.contains('pinned')) {
+    e.preventDefault();
+    return;
+  }
+  
+  draggedElement = this;
+  this.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+
+function handleDrop(e) {
+  if (e.stopPropagation) e.stopPropagation();
+  e.preventDefault();
+
+  if (this.classList.contains('pinned')) {
+    this.classList.remove('drag-over');
+    return false;
+  }
+
+  if (draggedElement !== this) {
+    const fromIndex = parseInt(draggedElement.dataset.index);
+    const toIndex = parseInt(this.dataset.index);
+
+    chrome.storage.sync.get(['pins'], (result) => {
+      const pins = result.pins || [];
+      let targetArray = getTargetArray(pins, folderPath);
+      
+      // Prevent dropping onto pinned items
+      if (targetArray[toIndex].pinned) return false;
+      
+      // Reorder array
+      const [movedPin] = targetArray.splice(fromIndex, 1);
+      targetArray.splice(toIndex, 0, movedPin);
+      
+      // Persist changes
+      chrome.storage.sync.set({ pins }, () => {
+        refreshCurrentView();
+      });
+    });
+  }
+  return false;
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Folder Navigation System -->
+                <div class="code-block">
+                    <div class="code-block__header">
+                        <div class="code-block__title">
+                            <i class="fas fa-folder-open"></i>
+                            <span>popup.js - Nested Folder Navigation</span>
+                        </div>
+                        <div class="code-block__description" data-en="Hierarchical folder system with unlimited nesting depth, path tracking, and seamless back navigation through folder trees." data-es="Sistema de carpetas jerárquico con profundidad de anidamiento ilimitada, seguimiento de rutas y navegación fluida hacia atrás en árboles de carpetas.">Hierarchical folder system with unlimited nesting depth, path tracking, and seamless back navigation through folder trees.</div>
+                    </div>
+                    <div class="code-block__content">
+                        <pre><code class="language-javascript">/**
+ * Get the target array based on folder path
+ */
+function getTargetArray(pins, path) {
+  let targetArray = pins;
+  for (let i = 0; i < path.length; i++) {
+    if (!targetArray[path[i]].items) {
+      targetArray[path[i]].items = [];
+    }
+    targetArray = targetArray[path[i]].items;
+  }
+  return targetArray;
+}
+
+/**
+ * Open a folder and navigate into it
+ */
+function openFolder(index) {
+  chrome.storage.sync.get(['pins'], (result) => {
+    const pins = result.pins || [];
+    const targetArray = getTargetArray(pins, folderPath);
+    const folder = targetArray[index];
+    
+    if (folder && folder.type === 'folder') {
+      folderPath.push(index);
+      currentFolder = index;
+      currentFolderOpenAllMode = folder.openAll || false;
+      
+      // Update UI
+      folderNav.style.display = 'flex';
+      folderNameDisplay.textContent = folder.name;
+      openAllToggle.checked = currentFolderOpenAllMode;
+      
+      renderPins(folder.items || []);
+    }
+  });
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Overview Section -->
+        <section class="section project-architecture" id="architecture">
+            <div class="container">
+                <h2 class="section__title" data-en="Architecture Overview" data-es="Descripción de la Arquitectura">Architecture Overview</h2>
+                
+                <div class="architecture-grid">
+                    <div class="architecture-layer">
+                        <div class="architecture-layer__header">
+                            <i class="fas fa-window-maximize"></i>
+                            <h3>Popup Layer (popup.js/html)</h3>
+                        </div>
+                        <p data-en="Controls all UI logic, event listeners, and DOM rendering. Acts as the 'brain' of the interface, handling user interactions and orchestrating state updates." data-es="Controla toda la lógica de UI, event listeners y renderizado del DOM. Actúa como el 'cerebro' de la interfaz, gestionando interacciones de usuario y orquestando actualizaciones de estado.">
+                            Controls all UI logic, event listeners, and DOM rendering. Acts as the "brain" of the interface, handling user interactions and orchestrating state updates.
+                        </p>
+                        <ul class="architecture-layer__features">
+                            <li data-en="Dynamic DOM manipulation with vanilla JS" data-es="Manipulación dinámica del DOM con JS vanilla">Dynamic DOM manipulation with vanilla JS</li>
+                            <li data-en="Event delegation for optimal performance" data-es="Delegación de eventos para rendimiento óptimo">Event delegation for optimal performance</li>
+                            <li data-en="Real-time UI updates on storage changes" data-es="Actualizaciones de UI en tiempo real ante cambios de almacenamiento">Real-time UI updates on storage changes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="architecture-layer">
+                        <div class="architecture-layer__header">
+                            <i class="fas fa-cogs"></i>
+                            <h3>Background Service Worker</h3>
+                        </div>
+                        <p data-en="Listens for global events including keyboard shortcuts (chrome.commands) and installation events (chrome.runtime.onInstalled). Manages cross-tab communication." data-es="Escucha eventos globales incluyendo atajos de teclado (chrome.commands) y eventos de instalación (chrome.runtime.onInstalled). Gestiona comunicación entre pestañas.">
+                            Listens for global events including keyboard shortcuts (chrome.commands) and installation events (chrome.runtime.onInstalled). Manages cross-tab communication.
+                        </p>
+                        <ul class="architecture-layer__features">
+                            <li data-en="Keyboard shortcut handling" data-es="Manejo de atajos de teclado">Keyboard shortcut handling</li>
+                            <li data-en="Context menu integration" data-es="Integración de menú contextual">Context menu integration</li>
+                            <li data-en="Installation & update lifecycle" data-es="Ciclo de vida de instalación y actualización">Installation & update lifecycle</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="architecture-layer">
+                        <div class="architecture-layer__header">
+                            <i class="fas fa-database"></i>
+                            <h3>Storage Layer (chrome.storage.sync)</h3>
+                        </div>
+                        <p data-en="Acts as the single source of truth for application state. Stores pins, folders, and user settings with asynchronous read/write operations, enabling cross-device synchronization." data-es="Actúa como la única fuente de verdad para el estado de la aplicación. Almacena pines, carpetas y configuraciones de usuario con operaciones asíncronas de lectura/escritura, permitiendo la sincronización entre dispositivos.">
+                            Acts as the single source of truth for application state. Stores pins, folders, and user settings with asynchronous read/write operations, enabling cross-device synchronization.
+                        </p>
+                        <ul class="architecture-layer__features">
+                            <li data-en="Asynchronous storage API with sync" data-es="API de almacenamiento asíncrona con sync">Asynchronous storage API with sync</li>
+                            <li data-en="JSON import/export functionality" data-es="Funcionalidad de importación/exportación JSON">JSON import/export functionality</li>
+                            <li data-en="Persistent and synced across devices" data-es="Persistente y sincronizado entre dispositivos">Persistent and synced across devices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Roadmap Section -->
+        <section class="section project-roadmap" id="roadmap">
+            <div class="container">
+                <h2 class="section__title" data-en="Future Roadmap" data-es="Próximos Pasos">Future Roadmap</h2>
+                
+                <div class="roadmap-timeline">
+                    <div class="roadmap-item">
+                        <div class="roadmap-item__marker"></div>
+                        <div class="roadmap-item__content">
+                            <h3 class="roadmap-item__title" data-en="Context Menu Integration" data-es="Integración de Menú Contextual">Context Menu Integration</h3>
+                            <p class="roadmap-item__description" data-en="Add chrome.contextMenus support for right-click bookmark saving and quick folder assignment from any page." data-es="Añadir soporte de chrome.contextMenus para guardar marcadores con clic derecho y asignación rápida de carpetas desde cualquier página.">
+                                Add chrome.contextMenus support for right-click bookmark saving and quick folder assignment from any page.
+                            </p>
+                            <span class="roadmap-item__status" data-en="In Progress" data-es="En Progreso">In Progress</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-item__marker"></div>
+                        <div class="roadmap-item__content">
+                            <h3 class="roadmap-item__title" data-en="Advanced Search & Filters" data-es="Búsqueda y Filtros Avanzados">Advanced Search & Filters</h3>
+                            <p class="roadmap-item__description" data-en="Implement fuzzy search algorithm with tag-based filtering and recently accessed pins for faster navigation." data-es="Implementar algoritmo de búsqueda difusa con filtrado basado en etiquetas y pines accedidos recientemente para navegación más rápida.">
+                                Implement fuzzy search algorithm with tag-based filtering and recently accessed pins for faster navigation.
+                            </p>
+                            <span class="roadmap-item__status" data-en="In Progress" data-es="En Progreso">In Progress</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-item__marker"></div>
+                        <div class="roadmap-item__content">
+                            <h3 class="roadmap-item__title" data-en="Theme Editor" data-es="Editor de Temas">Theme Editor</h3>
+                            <p class="roadmap-item__description" data-en="Instead of just 6 predefined themes, implement a 'Theme Editor' where users can choose their own background, text, and accent colors using a color picker." data-es="En lugar de solo 6 temas predefinidos, implementar un 'Editor de Temas' donde el usuario pueda elegir sus propios colores de fondo, texto y acentos usando un selector de color.">
+                                Instead of just 6 predefined themes, implement a "Theme Editor" where users can choose their own background, text, and accent colors using a color picker.
+                            </p>
+                            <span class="roadmap-item__status" data-en="Planned" data-es="Planificado">Planned</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-item__marker"></div>
+                        <div class="roadmap-item__content">
+                            <h3 class="roadmap-item__title" data-en="Custom Pin Icons" data-es="Iconos Personalizados">Custom Pin Icons</h3>
+                            <p class="roadmap-item__description" data-en="Allow users to upload their own images (or paste an image URL) to use as icons for their pins, instead of relying solely on favicons." data-es="Permitir a los usuarios subir sus propias imágenes (o pegar un enlace a una imagen) para usarlas como iconos de sus pines, en lugar de depender solo del favicon.">
+                                Allow users to upload their own images (or paste an image URL) to use as icons for their pins, instead of relying solely on favicons.
+                            </p>
+                            <span class="roadmap-item__status" data-en="Planned" data-es="Planificado">Planned</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-item__marker"></div>
+                        <div class="roadmap-item__content">
+                            <h3 class="roadmap-item__title" data-en="Native Bookmarks Import" data-es="Importación de Marcadores Nativos">Native Bookmarks Import</h3>
+                            <p class="roadmap-item__description" data-en="Add a function that reads the chrome.bookmarks API to automatically import all existing bookmarks from the user's browser into GoodPins." data-es="Añadir una función que lea la API de chrome.bookmarks para importar automáticamente todos los marcadores existentes del usuario desde el navegador a GoodPins.">
+                                Add a function that reads the chrome.bookmarks API to automatically import all existing bookmarks from the user's browser into GoodPins.
+                            </p>
+                            <span class="roadmap-item__status" data-en="Planned" data-es="Planificado">Planned</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-item__marker"></div>
+                        <div class="roadmap-item__content">
+                            <h3 class="roadmap-item__title" data-en="Multiple View Layouts" data-es="Diseño de Múltiples Vistas">Multiple View Layouts</h3>
+                            <p class="roadmap-item__description" data-en="Offer alternative visualization options to the grid, such as a 'Compact List' (text only) or 'Detailed List' (with visible URLs)." data-es="Ofrecer opciones de visualización alternativas al grid, como una 'Lista Compacta' (solo texto) o una 'Lista Detallada' (con la URL visible).">
+                                Offer alternative visualization options to the grid, such as a "Compact List" (text only) or "Detailed List" (with visible URLs).
+                            </p>
+                            <span class="roadmap-item__status" data-en="Planned" data-es="Planificado">Planned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation & Usage Section - At the end -->
+        <section class="section project-installation" id="installation">
+            <div class="container">
+                <h2 class="section__title" data-en="Installation & Usage" data-es="Instalación y Uso">Installation & Usage</h2>
+                
+                <div class="installation-grid">
+                    <div class="installation-option">
+                        <div class="installation-option__icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3 class="installation-option__title" data-en="For Users" data-es="Para Usuarios">For Users</h3>
+                        <p class="installation-option__description" data-en="Install directly from the Chrome Web Store with one click." data-es="Instala directamente desde Chrome Web Store con un clic.">Install directly from the Chrome Web Store with one click.</p>
+                        <a href="https://chromewebstore.google.com/detail/goodpins/placeholder" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                            <img src="../svg/extensions.svg" alt="Chrome Extension" class="btn-icon">
+                            <span data-en="Install Extension" data-es="Instalar Extensión">Install Extension</span>
+                        </a>
+                    </div>
+                    
+                    <div class="installation-option">
+                        <div class="installation-option__icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="installation-option__title" data-en="For Developers" data-es="Para Desarrolladores">For Developers</h3>
+                        <p class="installation-option__description" data-en="Clone the repository and load it as an unpacked extension for development." data-es="Clona el repositorio y cárgalo como extensión descomprimida para desarrollo.">Clone the repository and load it as an unpacked extension for development.</p>
+                        <div class="code-snippet">
+                            <pre><code class="language-bash"># Clone the repository
+git clone https://github.com/Dexterpol-A21/goodPins.git
+
+# Navigate to chrome://extensions
+# Enable "Developer mode"
+# Click "Load unpacked" and select the folder</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <span class="footer__logo">Paul<span>ECL</span></span>
+                    <p class="footer__tagline">Aspiring Computer Systems Engineer & Junior Fullstack Developer</p>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#experience">Experience</a>
+                    <a href="../index.html#skills">Skills</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                
+                <div class="footer__social">
+                    <a href="https://github.com/Dexterpol-A21" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/paul-contreras-lobato-495b82232/" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.fiverr.com/s/XLzgZ0G" class="fiverr-link" aria-label="Fiverr">
+                        <img src="../img/icons8-fiverr-500.svg" alt="Fiverr" class="fiverr-icon">
+                    </a>
+                    <a href="mailto:paulconlob@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Paul Eduardo Contreras Lobato. Some Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/css.min.js"></script>
+    
+    <script src="../script.js"></script>
+    <script src="project.js"></script>
+</body>
+</html>

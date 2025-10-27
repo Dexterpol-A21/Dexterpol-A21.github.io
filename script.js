@@ -1,5 +1,9 @@
-// Modern Portfolio JavaScript - Paul Eduardo Contreras Lobato
-// Enhanced with performance optimizations and accessibility features
+// ============================================================================
+// GoodPins - Chrome Extension for Bookmark Management
+// Author: Paul Eduardo Contreras Lobato (Dexterpol-A21)
+// GitHub: https://github.com/Dexterpol-A21
+// Portfolio: https://dexterpol-a21.github.io
+// ============================================================================
 
 class PortfolioApp {
     constructor() {
@@ -32,8 +36,7 @@ class PortfolioApp {
         this.setupAccessibility();
         this.setupPerformanceOptimizations();
         this.setupPhoneClipboard();
-        // Show success/error message after FormSubmit redirect
-        this.showSubmissionResultFromURL();
+        this.showSubmissionResultFromURL(); // Add this line
         this.isLoaded = true;
         
         // Dispatch custom event when app is ready
@@ -54,31 +57,12 @@ class PortfolioApp {
     }
 
     updateThemeIcon() {
-        const themeIcon = document.querySelector('.theme-toggle .material-symbols-outlined');
+        const themeIcon = document.querySelector('[data-theme-icon]');
         if (themeIcon) {
-            // Try Material Icons first, then fallback to emoji
-            const iconName = this.currentTheme === 'light' ? 'dark_mode' : 'light_mode';
-            const fallbackEmoji = this.currentTheme === 'light' ? '🌙' : '☀️';
-            
-            themeIcon.textContent = iconName;
-            
-            // Check if Material Icons are working, if not use emoji
-            setTimeout(() => {
-                const testDiv = document.createElement('div');
-                testDiv.style.fontFamily = 'Material Symbols Outlined';
-                testDiv.textContent = iconName;
-                testDiv.style.position = 'absolute';
-                testDiv.style.visibility = 'hidden';
-                document.body.appendChild(testDiv);
-                
-                const hasFont = testDiv.offsetWidth > 0;
-                document.body.removeChild(testDiv);
-                
-                if (!hasFont) {
-                    themeIcon.textContent = fallbackEmoji;
-                    themeIcon.style.fontFamily = 'system-ui, -apple-system, sans-serif';
-                }
-            }, 50);
+            themeIcon.classList.add('fas');
+            themeIcon.classList.remove('fa-moon', 'fa-sun');
+            themeIcon.classList.add(this.currentTheme === 'light' ? 'fa-moon' : 'fa-sun');
+            themeIcon.setAttribute('aria-hidden', 'true');
         }
     }
 

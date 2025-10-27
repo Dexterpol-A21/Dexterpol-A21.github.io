@@ -468,6 +468,7 @@ body {
     font-size: var(--text-lg);
     font-weight: var(--font-bold);
     color: var(--color-black);
+    text-decoration: none;
 }
 
 .sidebar__logo span {
@@ -1142,26 +1143,50 @@ body {
     bottom: var(--space-4);
     right: var(--space-4);
     z-index: 10;
-    font-size: 2rem;
-    color: #737373; /* Gray for both themes in normal state */
+    width: 2rem;
+    height: 2rem;
     opacity: 0.8;
     transition: all var(--transition);
+    object-fit: contain;
 }
 
 .project-card:hover .project-card__type-icon {
     opacity: 1;
-    transform: scale(1.1);
-    color: #000000; /* Dark black on hover in light theme */
+    filter: brightness(1.2);
+}
+
+/* Make extension SVG icons white in dark theme */
+[data-theme="dark"] .project-card__type-icon:not(.fa):not(.fas):not(.fab) {
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] .project-card:hover .project-card__type-icon:not(.fa):not(.fas):not(.fab) {
+    filter: brightness(0) invert(1) brightness(1.2);
+}
+
+/* For FontAwesome icons (if still used) */
+.project-card__type-icon.fa,
+.project-card__type-icon.fas,
+.project-card__type-icon.fab {
+    font-size: 2rem;
+    color: #737373;
+    width: auto;
+    height: auto;
+}
+
+.project-card:hover .project-card__type-icon.fa,
+.project-card:hover .project-card__type-icon.fas,
+.project-card:hover .project-card__type-icon.fab {
+    color: #000000;
 }
 
 [data-theme="dark"] .project-card__type-icon {
-    color: #737373; /* Same gray in dark theme normal state */
     opacity: 0.9;
 }
 
 [data-theme="dark"] .project-card:hover .project-card__type-icon {
-    color: #fafafa; /* Bright white on hover in dark theme */
     opacity: 1;
+    filter: brightness(1.2);
 }
 
 .project-card__image {
@@ -1183,19 +1208,31 @@ body {
     transition: transform var(--transition-slow);
 }
 
-.project-card:hover .project-card__image img {
-    transform: scale(1.05);
+/* GoodPins logo theme switching */
+.project-card__image img[src*="goodPinsLogo"] {
+    object-fit: contain;
+    padding: 0;
+    background: transparent;
+    width: 100%;
+    height: auto;
 }
 
-.project-placeholder i {
-    font-size: var(--text-4xl);
-    color: var(--color-gray-400);
+/* Hide dark logo in light theme, show light logo */
+[data-theme="light"] .project-card__image img[src*="goodPinsLogodark"] {
+    display: none;
 }
 
-.project-placeholder span {
-    font-size: var(--text-sm);
-    color: var(--color-gray-500);
-    font-weight: var(--font-medium);
+[data-theme="light"] .project-card__image img[src*="goodPinsLogoLight"] {
+    display: block;
+}
+
+/* Hide light logo in dark theme, show dark logo */
+[data-theme="dark"] .project-card__image img[src*="goodPinsLogoLight"] {
+    display: none;
+}
+
+[data-theme="dark"] .project-card__image img[src*="goodPinsLogodark"] {
+    display: block;
 }
 
 .project-card__content {
@@ -1623,6 +1660,12 @@ body {
     color: var(--color-gray-700);
 }
 
+.control-btn i {
+    font-size: var(--text-xl);
+    transition: transform var(--transition);
+    color: currentColor;
+}
+
 .control-btn:hover {
     background: var(--color-gray-100);
     transform: translateY(-2px);
@@ -1663,8 +1706,8 @@ body {
         height: 40px;
     }
     
-    .theme-toggle .material-symbols-outlined,
-    .language-toggle .material-symbols-outlined {
+    .theme-toggle i,
+    .language-toggle i {
         font-size: var(--text-lg);
     }
 }
