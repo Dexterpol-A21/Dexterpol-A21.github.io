@@ -28,7 +28,7 @@ class PortfolioApp {
         this.setupLanguage();
         this.setupToggleControls();
         this.setupMaterialIconsFallback();
-        this.setupNavigation();
+        // this.setupNavigation(); // Handled by React
         this.setupScrollEffects();
         this.setupSkillBars();
         this.setupContactForm();
@@ -75,6 +75,7 @@ class PortfolioApp {
         this.currentLanguage = this.currentLanguage === 'en' ? 'es' : 'en';
         localStorage.setItem('language', this.currentLanguage);
         this.updateLanguageContent();
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: this.currentLanguage } }));
     }
 
     updateLanguageContent() {

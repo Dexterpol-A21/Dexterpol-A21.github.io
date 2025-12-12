@@ -16,6 +16,12 @@ class ProjectPage {
     }
 
     onDOMReady() {
+        this.currentTheme = localStorage.getItem('theme') || 'light';
+        this.currentLanguage = localStorage.getItem('language') || 'en';
+        
+        this.setupTheme();
+        this.setupLanguage();
+        this.setupToggleControls();
         this.setupProjectSpecificFeatures();
         this.initializeSyntaxHighlighting();
         this.setupMaterialIconsFallback();
@@ -23,9 +29,65 @@ class ProjectPage {
         console.log('Project page loaded');
     }
 
+    // Theme Management
+    setupTheme() {
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
+        this.updateThemeIcon();
+    }
+
+    toggleTheme() {
+        this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
+        localStorage.setItem('theme', this.currentTheme);
+        this.updateThemeIcon();
+    }
+
+    updateThemeIcon() {
+        const themeIcon = document.querySelector('[data-theme-icon]');
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-moon', 'fa-sun');
+            themeIcon.classList.add(this.currentTheme === 'light' ? 'fa-moon' : 'fa-sun');
+        }
+    }
+
+    // Language Management
+    setupLanguage() {
+        this.updateLanguageContent();
+    }
+
+    toggleLanguage() {
+        this.currentLanguage = this.currentLanguage === 'en' ? 'es' : 'en';
+        localStorage.setItem('language', this.currentLanguage);
+        this.updateLanguageContent();
+    }
+
+    updateLanguageContent() {
+        const elements = document.querySelectorAll('[data-en][data-es]');
+        elements.forEach(element => {
+            const text = element.getAttribute(`data-${this.currentLanguage}`);
+            if (text) {
+                element.textContent = text;
+            }
+        });
+    }
+
+    // Toggle Controls Setup
+    setupToggleControls() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const languageToggle = document.getElementById('language-toggle');
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+
+        if (languageToggle) {
+            languageToggle.addEventListener('click', () => this.toggleLanguage());
+        }
+    }
+
     setupProjectSpecificFeatures() {
         // Add any project-specific interactive features here
-        this.setupBackNavigation();
+        // this.setupBackNavigation();
     }
 
     setupBackNavigation() {

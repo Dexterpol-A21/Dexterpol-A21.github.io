@@ -1,0 +1,132 @@
+
+/* Architecture Diagram Styles (GoodPins) */
+.arch-diagram-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    margin-bottom: var(--space-6);
+}
+
+.arch-node {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    z-index: 2;
+    transition: all var(--transition);
+}
+
+.arch-node--popup {
+    background: var(--color-white);
+    border: 2px solid var(--color-gray-200);
+    color: var(--color-black);
+    width: 200px;
+}
+
+[data-theme="dark"] .arch-node--popup {
+    background: #262626;
+    border-color: #404040;
+    color: #fafafa;
+}
+
+.arch-node--controller {
+    background: var(--color-black);
+    color: var(--color-white);
+    width: 220px;
+    box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .arch-node--controller {
+    background: #fafafa;
+    color: #171717;
+}
+
+.arch-node--storage,
+.arch-node--worker {
+    background: var(--color-gray-100);
+    border: 1px dashed var(--color-gray-400);
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--color-gray-700);
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+[data-theme="dark"] .arch-node--storage,
+[data-theme="dark"] .arch-node--worker {
+    background: #1a1a1a;
+    border-color: #404040;
+    color: #a3a3a3;
+}
+
+.arch-arrow-down {
+    height: 40px;
+    width: 2px;
+    background: var(--color-gray-300);
+    position: relative;
+}
+
+[data-theme="dark"] .arch-arrow-down {
+    background: #404040;
+}
+
+.arch-arrow-down::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--color-gray-300);
+}
+
+[data-theme="dark"] .arch-arrow-down::after {
+    border-top-color: #404040;
+}
+
+.arch-branch {
+    height: 40px;
+    width: 300px;
+    border-left: 2px solid var(--color-gray-300);
+    border-right: 2px solid var(--color-gray-300);
+    border-top: 2px solid var(--color-gray-300);
+    margin-top: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .arch-branch {
+    border-color: #404040;
+}
+
+.arch-row {
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+    margin-top: -2px;
+}
+
+/* Hover effects for the diagram */
+.bento-card-eng:hover .arch-node--controller {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.bento-card-eng:hover .arch-arrow-down,
+.bento-card-eng:hover .arch-branch {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.bento-card-eng:hover .arch-arrow-down::after {
+    border-top-color: var(--color-primary);
+}

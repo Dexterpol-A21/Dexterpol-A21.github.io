@@ -585,7 +585,7 @@
 
 /* Architecture Overview Section */
 .project-architecture {
-    background: var(--color-gray-50);
+    background: var(--color-white);
 }
 
 .architecture-grid {
@@ -808,7 +808,7 @@
 
 /* Dark theme for Architecture section */
 [data-theme="dark"] .project-architecture {
-    background: #171717;
+    background: #0a0a0a;
 }
 
 [data-theme="dark"] .architecture-layer p {
@@ -1333,6 +1333,215 @@
     font-weight: var(--font-medium);
 }
 
+/* Bento Grid Layout for Features */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(200px, auto);
+        gap: var(--space-6);
+    }
+}
+
+.bento-card {
+    background: var(--color-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+    border: 1px solid var(--color-gray-200);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-black);
+}
+
+.bento-card--large {
+    grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+    .bento-card--large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .bento-card--medium {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .bento-card--wide {
+        grid-column: span 2;
+    }
+    
+    .bento-card--tall {
+        grid-row: span 2;
+    }
+}
+
+.bento-card__icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-gray-100);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    transition: all var(--transition);
+}
+
+.bento-card:hover .bento-card__icon {
+    background: var(--color-black);
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.bento-card__icon i {
+    font-size: var(--text-xl);
+    color: var(--color-gray-700);
+    transition: all var(--transition);
+}
+
+.bento-card:hover .bento-card__icon i {
+    color: var(--color-white);
+}
+
+.bento-card__content {
+    position: relative;
+    z-index: 1;
+}
+
+.bento-card__title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-2);
+    color: var(--color-black);
+}
+
+.bento-card--large .bento-card__title {
+    font-size: var(--text-2xl);
+}
+
+.bento-card__description {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    line-height: 1.6;
+}
+
+.bento-card--large .bento-card__description {
+    font-size: var(--text-base);
+}
+
+/* Decorative background elements for bento cards */
+.bento-card__bg {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    opacity: 0.05;
+    transition: all var(--transition);
+    pointer-events: none;
+}
+
+.bento-card:hover .bento-card__bg {
+    opacity: 0.1;
+    transform: scale(1.1);
+}
+
+.bento-card__bg i {
+    font-size: 150px;
+}
+
+/* Dark theme for Bento Grid */
+[data-theme="dark"] .bento-card {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+[data-theme="dark"] .bento-card:hover {
+    background: #222222;
+    border-color: #fafafa;
+}
+
+[data-theme="dark"] .bento-card__icon {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .bento-card:hover .bento-card__icon {
+    background: #fafafa;
+}
+
+[data-theme="dark"] .bento-card__icon i {
+    color: #e5e5e5;
+}
+
+[data-theme="dark"] .bento-card:hover .bento-card__icon i {
+    color: #0a0a0a;
+}
+
+[data-theme="dark"] .bento-card__title {
+    color: #fafafa;
+}
+
+[data-theme="dark"] .bento-card__description {
+    color: #a3a3a3;
+}
+
+[data-theme="dark"] .bento-card__bg {
+    opacity: 0.03;
+}
+
+[data-theme="dark"] .bento-card:hover .bento-card__bg {
+    opacity: 0.08;
+}
+
+/* Enhanced Overview Section */
+.overview-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-12);
+}
+
+.overview-hero__title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-extrabold);
+    margin-bottom: var(--space-6);
+    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gray-600) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+[data-theme="dark"] .overview-hero__title {
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: var(--color-black);
+}
+
+.overview-hero__text {
+    font-size: var(--text-xl);
+    line-height: 1.8;
+    color: var(--color-gray-600);
+}
+
+[data-theme="dark"] .overview-hero__text {
+    color: var(--color-gray-900);
+}
+
 /* Dark theme for Features sections */
 [data-theme="dark"] .project-features {
     background: #0a0a0a;
@@ -1426,6 +1635,11 @@
     background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
 }
 
+/* Special handling for image icons in installation options */
+[data-theme="dark"] .installation-option__icon img {
+    filter: brightness(0) invert(1);
+}
+
 [data-theme="dark"] .installation-option__icon i {
     color: #e5e5e5;
 }
@@ -1436,4 +1650,222 @@
 
 [data-theme="dark"] .installation-option__description {
     color: #a3a3a3;
+}
+
+/* Tech Stack Section */
+.tech-stack {
+    background: var(--color-gray-50);
+}
+
+.tech-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    margin-top: var(--space-8);
+}
+
+.tech-category__title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-6);
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 4px solid var(--color-black);
+    padding-left: var(--space-3);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-4);
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition);
+    border: 1px solid transparent;
+    text-align: center;
+    gap: var(--space-3);
+}
+
+.tech-item:hover {
+    background: var(--color-white);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--hover-color, var(--color-black));
+}
+
+.tech-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: block;
+    background-color: currentColor;
+}
+
+.tech-item i,
+.tech-item img,
+.tech-icon {
+    font-size: var(--text-3xl);
+    color: var(--color-gray-700);
+    transition: all var(--transition);
+}
+
+.tech-item img {
+    height: 2.5rem;
+    width: auto;
+    /* Make all icons uniform dark gray regardless of original color */
+    filter: brightness(0) opacity(0.6);
+}
+
+.tech-item:hover i,
+.tech-item:hover .tech-icon {
+    color: var(--hover-color, var(--color-black));
+    transform: scale(1.1);
+}
+
+.tech-item:hover img {
+    transform: scale(1.1);
+    /* Restore original color */
+    filter: brightness(1) opacity(1);
+}
+
+.tech-item span {
+    font-weight: var(--font-medium);
+    color: var(--color-gray-700);
+    font-size: var(--text-sm);
+}
+
+/* Dark theme for Tech Stack */
+[data-theme="dark"] .tech-stack {
+    background: #171717;
+}
+
+[data-theme="dark"] .tech-category__title {
+    color: var(--color-gray-400);
+    border-left-color: var(--color-white);
+}
+
+[data-theme="dark"] .tech-item {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+[data-theme="dark"] .tech-item:hover {
+    background: #222222;
+    border-color: var(--hover-color, #fafafa);
+}
+
+[data-theme="dark"] .tech-item i,
+[data-theme="dark"] .tech-icon {
+    color: #a3a3a3;
+}
+
+[data-theme="dark"] .tech-item:hover i,
+[data-theme="dark"] .tech-item:hover .tech-icon {
+    color: var(--hover-color, #fafafa);
+}
+
+[data-theme="dark"] .tech-item img {
+    /* In dark mode, make icons light gray */
+    filter: brightness(0) invert(1) opacity(0.7);
+}
+
+[data-theme="dark"] .tech-item:hover img {
+    /* Restore original color on hover */
+    filter: brightness(1) invert(0) opacity(1);
+}
+
+[data-theme="dark"] .tech-item span {
+    color: #d4d4d4;
+}
+
+/* Project CTA Section */
+.project-cta {
+    padding: var(--space-16) 0;
+    text-align: center;
+    background: var(--color-gray-50);
+}
+
+.project-cta__content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.project-cta__title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-6);
+    color: var(--color-black);
+}
+
+.project-cta__description {
+    font-size: var(--text-lg);
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+}
+
+[data-theme="dark"] .project-cta {
+    background: #171717;
+}
+
+[data-theme="dark"] .project-cta__title {
+    color: #fafafa;
+}
+
+[data-theme="dark"] .project-cta__description {
+    color: #a3a3a3;
+}
+
+/* Ensure button images invert in dark mode for visibility */
+[data-theme="dark"] .btn--secondary img {
+    filter: brightness(0) invert(1);
+}
+
+/* Fix button heights in hero actions */
+.project-hero__actions {
+    display: flex;
+    gap: 0.375rem; /* Closer gap (6px) */
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.project-hero__actions .btn {
+    height: 3.25rem; /* Fixed height for consistency (52px) */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 var(--space-6); /* Use horizontal padding, let height control vertical */
+}
+
+/* Add transparent border to primary to match secondary's 2px border */
+.project-hero__actions .btn--primary {
+    border: 2px solid transparent;
+}
+
+/* Ensure image in secondary button doesn't break layout */
+.project-hero__actions .btn--secondary img {
+    display: block; /* Remove inline spacing */
+    width: 1rem; /* 16px responsive */
+    height: 1rem;
+    margin-right: var(--space-2);
+    transition: filter 0.3s ease;
+}
+
+/* Invert icon color on hover */
+.btn--secondary:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/* Dark mode hover fix: ensure icon is black on light background */
+[data-theme="dark"] .btn--secondary:hover img {
+    filter: brightness(0);
 }

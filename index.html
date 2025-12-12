@@ -25,7 +25,11 @@
     <meta property="twitter:image" content="https://dexterpol-a21.github.io/assets/social-preview.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
     <link rel="canonical" href="https://dexterpol-a21.github.io/">
     
     <title>Paul Eduardo Contreras Lobato | Aspiring Computer Systems Engineer & Junior Fullstack Developer</title>
@@ -47,25 +51,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar__brand">
-            <span class="sidebar__logo">P<span>ECL</span></span>
-        </div>
-        
-        <ul class="sidebar__links">
-            <li><a href="#hero" class="sidebar__link" data-tooltip="Home"><i class="fas fa-home"></i></a></li>
-            <li><a href="#about" class="sidebar__link" data-tooltip="About"><i class="fas fa-user"></i></a></li>
-            <li><a href="#experience" class="sidebar__link" data-tooltip="Experience"><i class="fas fa-briefcase"></i></a></li>
-            <li><a href="#projects" class="sidebar__link" data-tooltip="Projects"><i class="fas fa-folder"></i></a></li>
-            <li><a href="#skills" class="sidebar__link" data-tooltip="Skills"><i class="fas fa-code"></i></a></li>
-            <li><a href="#contact" class="sidebar__link" data-tooltip="Contact"><i class="fas fa-envelope"></i></a></li>
-        </ul>
-        
-        <div class="sidebar__progress">
-            <div class="progress-bar" id="progress-bar"></div>
-        </div>
-    </nav>
+    <!-- Sidebar Navigation (Now handled by React) -->
 
     <main id="main" class="main-content">
         <!-- Hero Section -->
@@ -335,141 +321,9 @@
         </section>
 
         <!-- Projects Section (moved here from below Skills) -->
-        <section class="section projects" id="projects">
-            <div class="container">
-                <h2 class="section__title" data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</h2>
-                <div class="projects__grid">
-                    <!-- GoodPins - Featured Project -->
-                    <div class="project-card">
-                        <img src="svg/extensions.svg" alt="Browser Extension" class="project-card__type-icon">
-                        <div class="project-card__image">
-                            <img src="projects/img/goodPinsLogoLight.png" alt="GoodPins Chrome Extension" loading="lazy">
-                            <img src="projects/img/goodPinsLogodark.png" alt="GoodPins Chrome Extension" loading="lazy">
-                        </div>
-                        <div class="project-card__content">
-                            <h3 class="project-card__title" data-en="GoodPins: Bookmark Manager Chrome Extension" data-es="GoodPins: Extensión de Chrome para Gestión de Marcadores">GoodPins: Bookmark Manager Chrome Extension</h3>
-                            <p class="project-card__description" data-en="Developed a Chrome extension for fast, visual bookmark management built entirely with vanilla JavaScript. Features a custom drag-and-drop grid for reorganizing pins and folders, chrome.storage persistence with JSON import/export, and dynamic modals for theme and layout customization without reloads." data-es="Desarrollé una extensión de Chrome para gestión rápida y visual de marcadores, construida íntegramente con JavaScript puro. Incluye un grid de arrastrar y soltar hecho desde cero para reorganizar pines y carpetas, persistencia con chrome.storage con funciones de importación/exportación JSON, y modales dinámicos para personalizar temas y columnas sin recargar.">
-                                Developed a Chrome extension for fast, visual bookmark management built entirely with vanilla JavaScript. Features a custom drag-and-drop grid for reorganizing pins and folders, chrome.storage persistence with JSON import/export, and dynamic modals for theme and layout customization without reloads.
-                            </p>
-                            <div class="project-card__tech">
-                                <span>JavaScript</span>
-                                <span>Chrome APIs</span>
-                                <span>HTML/CSS</span>
-                                <span>Local Storage</span>
-                            </div>
-                            <div class="project-card__links">
-                                <a href="https://chromewebstore.google.com/detail/goodpins/placeholder" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-en="Live Demo" data-es="Demo en Vivo">Live Demo</span>
-                                </a>
-                                <a href="https://github.com/Dexterpol-A21/goodPins" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fab fa-github"></i> <span data-en="GitHub" data-es="GitHub">GitHub</span>
-                                </a>
-                                <a href="projects/goodpins.html" class="project-link">
-                                    <i class="fas fa-book-open"></i> <span data-en="View Details" data-es="Ver Detalles">View Details</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <img src="svg/extensions.svg" alt="Browser Extension" class="project-card__type-icon">
-                        <div class="project-card__image">
-                            <img src="img/goodNotes.png" alt="GoodNotes Helper Chrome Extension" loading="lazy">
-                        </div>
-                        <div class="project-card__content">
-                            <h3 class="project-card__title" data-en="GoodNotes Helper: Call Center Productivity Extension" data-es="GoodNotes Helper: Extensión de Productividad para Call Center">GoodNotes Helper: Call Center Productivity Extension</h3>
-                            <p class="project-card__description" data-en="Developed a Chrome extension to automate and optimize call center workflows. Implemented features using JavaScript and Chrome APIs, including web scraping for NPI data retrieval, DOM manipulation for text cleaning (Alt+C shortcut), and local storage for call/schedule tracking. Significantly reduced manual effort and potential errors for agents." data-es="Desarrollé una extensión de Chrome para automatizar y optimizar flujos de trabajo de call center. Implementé características usando JavaScript y Chrome APIs, incluyendo web scraping para recuperación de datos NPI, manipulación del DOM para limpieza de texto (atajo Alt+C), y almacenamiento local para seguimiento de llamadas/horarios. Reduje significativamente el esfuerzo manual y errores potenciales para agentes.">
-                                Developed a Chrome extension to automate and optimize call center workflows. Implemented features using JavaScript and Chrome APIs, including web scraping for NPI data retrieval, DOM manipulation for text cleaning (Alt+C shortcut), and local storage for call/schedule tracking. Significantly reduced manual effort and potential errors for agents.
-                            </p>
-                            <div class="project-card__tech">
-                                <span>JavaScript</span>
-                                <span>Chrome APIs</span>
-                                <span>HTML/CSS</span>
-                                <span>Web Scraping</span>
-                            </div>
-                            <div class="project-card__links">
-                                <a href="https://chromewebstore.google.com/detail/good-notes/hbjfmkgamdlelmjpbioehpcpkihjnach" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-en="Live Demo" data-es="Demo en Vivo">Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <img src="svg/website.svg" alt="Website" class="project-card__type-icon">
-                        <div class="project-card__image">
-                            <img src="img/gabis.png" alt="Gabis Restaurant Website" loading="lazy">
-                        </div>
-                        <div class="project-card__content">
-                            <h3 class="project-card__title" data-en="Gabis Restaurant - Responsive Website" data-es="Gabis Restaurant - Sitio Web Responsivo">Gabis Restaurant - Responsive Website</h3>
-                            <p class="project-card__description" data-en="Built a responsive website for Gabis Restaurant featuring multiple sections accessible via a navigation menu. Developed using HTML5, CSS3 (Flexbox/Grid), and JavaScript for interactivity, showcasing the menu, brand story, and contact details effectively across all devices." data-es="Construí un sitio web responsivo para Gabis Restaurant con múltiples secciones accesibles mediante un menú de navegación. Desarrollado usando HTML5, CSS3 (Flexbox/Grid), y JavaScript para interactividad, mostrando el menú, historia de la marca y detalles de contacto efectivamente en todos los dispositivos.">
-                                Built a responsive website for Gabis Restaurant featuring multiple sections accessible via a navigation menu. Developed using HTML5, CSS3 (Flexbox/Grid), and JavaScript for interactivity, showcasing the menu, brand story, and contact details effectively across all devices.
-                            </p>
-                            <div class="project-card__tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span data-en="Responsive Design" data-es="Diseño Responsivo">Responsive Design</span>
-                            </div>
-                            <div class="project-card__links">
-                                <a href="https://gabis.com.mx" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-en="Live Demo" data-es="Demo en Vivo">Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <img src="svg/website.svg" alt="Website" class="project-card__type-icon">
-                        <div class="project-card__image">
-                            <img src="img/doctorEnCasa.png" alt="Doctor en Casa Website" loading="lazy">
-                        </div>
-                        <div class="project-card__content">
-                            <h3 class="project-card__title" data-en="Doctor en Casa - Service Landing Page (SPA)" data-es="Doctor en Casa - Página de Aterrizaje de Servicio (SPA)">Doctor en Casa - Service Landing Page (SPA)</h3>
-                            <p class="project-card__description" data-en="Developed a fully responsive single-page application (SPA) landing page for a home medical service provider. Implemented a clean UI using HTML5/CSS3 and integrated direct user contact via a JavaScript-triggered WhatsApp link. Focused on clear service presentation and immediate communication access." data-es="Desarrollé una página de aterrizaje de aplicación de página única (SPA) completamente responsiva para un proveedor de servicios médicos a domicilio. Implementé una interfaz limpia usando HTML5/CSS3 e integré contacto directo de usuario mediante un enlace de WhatsApp activado por JavaScript. Enfocado en presentación clara de servicios y acceso inmediato a comunicación.">
-                                Developed a fully responsive single-page application (SPA) landing page for a home medical service provider. Implemented a clean UI using HTML5/CSS3 and integrated direct user contact via a JavaScript-triggered WhatsApp link. Focused on clear service presentation and immediate communication access.
-                            </p>
-                            <div class="project-card__tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span data-en="Responsive Design" data-es="Diseño Responsivo">Responsive Design</span>
-                            </div>
-                            <div class="project-card__links">
-                                <a href="https://www.doctorencasa.org" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-en="Live Demo" data-es="Demo en Vivo">Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <div id="react-root"></div>
 
-                    <div class="project-card">
-                        <img src="svg/website.svg" alt="Website" class="project-card__type-icon">
-                        <div class="project-card__image">
-                            <img src="img/helleskin.png" alt="Helleskin Website" loading="lazy">
-                        </div>
-                        <div class="project-card__content">
-                            <h3 class="project-card__title" data-en="Helleskin - Laboratory Client Acquisition Website" data-es="Helleskin - Sitio Web de Adquisición de Clientes de Laboratorio">Helleskin - Laboratory Client Acquisition Website</h3>
-                            <p class="project-card__description" data-en="Developed a responsive website for Helleskin Laboratory, strategically designed to generate client leads and showcase their specialized services. Utilized HTML5, CSS3, and JavaScript to build a professional online presence, featuring clear calls-to-action and optimized content delivery. Ensured cross-browser compatibility and mobile-first design to maximize reach and accessibility for potential clients." data-es="Desarrollé un sitio web responsivo para Helleskin Laboratory, diseñado estratégicamente para generar clientes potenciales y mostrar sus servicios especializados. Utilicé HTML5, CSS3, y JavaScript para construir una presencia en línea profesional, presentando llamados a la acción claros y entrega de contenido optimizada. Aseguré compatibilidad entre navegadores y diseño móvil primero para maximizar alcance y accesibilidad para clientes potenciales.">
-                                Developed a responsive website for Helleskin Laboratory, strategically designed to generate client leads and showcase their specialized services. Utilized HTML5, CSS3, and JavaScript to build a professional online presence, featuring clear calls-to-action and optimized content delivery. Ensured cross-browser compatibility and mobile-first design to maximize reach and accessibility for potential clients.
-                            </p>
-                            <div class="project-card__tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span data-en="Mobile-First" data-es="Móvil Primero">Mobile-First</span>
-                                <span data-en="Lead Generation" data-es="Generación de Leads">Lead Generation</span>
-                            </div>
-                            <div class="project-card__links">
-                                <a href="https://helleskin.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-en="Live Demo" data-es="Demo en Vivo">Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Skills Section -->
 
         <!-- Skills Section -->
         <section class="section skills" id="skills">
@@ -704,44 +558,7 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__brand">
-                    <span class="footer__logo">Paul<span>ECL</span></span>
-                    <p class="footer__tagline">Aspiring Computer Systems Engineer & Junior Fullstack Developer</p>
-                </div>
-                
-                <div class="footer__links">
-                    <a href="#about">About</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                
-                <div class="footer__social">
-                    <a href="https://github.com/Dexterpol-A21" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/paul-contreras-lobato-495b82232/" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.fiverr.com/s/XLzgZ0G" class="fiverr-link" aria-label="Fiverr">
-                        <img src="img/icons8-fiverr-500.svg" alt="Fiverr" class="fiverr-icon">
-                    </a>
-                    <a href="mailto:paulconlob@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <p>&copy; 2025 Paul Eduardo Contreras Lobato. Some Rights Reserved.</p>
-                <p>Designed & Built with passion and precision</p>
-            </div>
-        </div>
-    </footer>
+    <div id="react-footer"></div>
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -801,5 +618,6 @@
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    <script type="module" src="/main.jsx"></script>
 </body>
 </html>

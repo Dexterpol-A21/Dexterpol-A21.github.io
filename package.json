@@ -1,0 +1,23 @@
+{
+  "name": "dexterpol-a21.github.io",
+  "version": "1.0.0",
+  "description": "A modern, responsive portfolio website showcasing my skills as a Systems Engineering student and Junior Fullstack Developer. Built with clean code principles, accessibility in mind, and featuring a sophisticated black and white design system.",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "vite": "^6.4.1"
+  }
+}
