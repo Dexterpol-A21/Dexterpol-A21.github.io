@@ -45,9 +45,6 @@ const Sidebar = ({ items, logoPath = "/logo/portLogoLightNoBck.png", homeLink = 
 
   // Section Observer
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-    if (!sections.length) return;
-
     const observerOptions = {
       // Create a narrow "active zone" in the middle of the screen
       // This ensures short sections get highlighted when they pass through the center
@@ -58,16 +55,43 @@ const Sidebar = ({ items, logoPath = "/logo/portLogoLightNoBck.png", homeLink = 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // If we are at the very top of the page, force the first section
+          // This helps with initial load race conditions where content might shift
+          if (window.scrollY < 100 && navItems.length > 0) {
+             setActiveSection(navItems[0].id);
+             return;
+          }
+
           const alias = entry.target.getAttribute('data-section-alias');
           setActiveSection(alias || entry.target.id);
         }
       });
     }, observerOptions);
 
-    sections.forEach(section => observer.observe(section));
+    // Function to observe all sections
+    const observeSections = () => {
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => observer.observe(section));
+    };
 
-    return () => observer.disconnect();
-  }, []);
+    // Initial observation
+    observeSections();
+
+    // Watch for DOM changes to observe new sections (like those rendered by other React roots)
+    const mutationObserver = new MutationObserver(() => {
+      observeSections();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
+  }, [navItems]);
 
   if (isMobile) {
     return <RadialMenu items={navItems} logoPath={logoPath} activeSection={activeSection} />;
