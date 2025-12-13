@@ -2,7 +2,20 @@ import React, { useState, useRef, useEffect } from 'react';
 import './RadialMenu.css';
 
 const RadialMenu = ({ items, logoPath, activeSection }) => {
-  const [rotation, setRotation] = useState(0);
+  // Configuration
+  const RADIUS = 105; // Distance of items from center (Reduced from 135)
+  const ITEM_ANGLE_STEP = 360 / (items.length || 6); // Distribute evenly
+
+  const [rotation, setRotation] = useState(() => {
+    // Initialize rotation so the active item (or first item) is at the top (270 degrees)
+    let targetIndex = 0;
+    if (activeSection) {
+      const index = items.findIndex(item => item.id === activeSection);
+      if (index !== -1) targetIndex = index;
+    }
+    return 270 - (targetIndex * ITEM_ANGLE_STEP);
+  });
+
   const [isDragging, setIsDragging] = useState(false);
   const [isInertia, setIsInertia] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
@@ -10,16 +23,12 @@ const RadialMenu = ({ items, logoPath, activeSection }) => {
   const ringRef = useRef(null);
   const startAngleRef = useRef(0);
   const startRotationRef = useRef(0);
-  const currentRotationRef = useRef(0);
+  const currentRotationRef = useRef(rotation);
   const velocityRef = useRef(0);
   const animationFrameRef = useRef(null);
   const lastActiveSectionRef = useRef(activeSection);
   const navigationTimeoutRef = useRef(null);
   const pendingNavigationItemRef = useRef(null);
-
-  // Configuration
-  const RADIUS = 105; // Distance of items from center (Reduced from 135)
-  const ITEM_ANGLE_STEP = 360 / (items.length || 6); // Distribute evenly
 
   // Sync ref with state when not animating/dragging to keep them aligned
   useEffect(() => {

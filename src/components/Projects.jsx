@@ -36,13 +36,13 @@ const Projects = () => {
           {/* GoodScribe Project */}
           <div className="project-card">
             <div className="project-card__type-icons">
-              <img src="svg/website.svg" alt="Website" />
+              <img src="/svg/website.svg" alt="Website" />
               <span className="separator"></span>
-              <img src="svg/extensions.svg" alt="Browser Extension" />
+              <img src="/svg/extensions.svg" alt="Browser Extension" />
             </div>
             <div className="project-card__image">
-              <img src="projects/goodScribe/goodScribeLogoLight.png" alt="GoodScribe Chrome Extension" loading="lazy" />
-              <img src="projects/goodScribe/goodScribeLogoDark.png" alt="GoodScribe Chrome Extension" loading="lazy" />
+              <img src="/projects/goodScribe/goodScribeLogoLight.png" alt="GoodScribe Chrome Extension" loading="lazy" />
+              <img src="/projects/goodScribe/goodScribeLogoDark.png" alt="GoodScribe Chrome Extension" loading="lazy" />
             </div>
             <div className="project-card__content">
               <h3 className="project-card__title" data-en="GoodScribe - Interpreter Tool" data-es="GoodScribe - Herramienta para Intérpretes">
@@ -76,9 +76,9 @@ const Projects = () => {
 
           {/* 1decien Project */}
           <div className="project-card">
-            <img src="svg/website.svg" alt="Website" className="project-card__type-icon" />
+            <img src="/svg/website.svg" alt="Website" className="project-card__type-icon" />
             <div className="project-card__image">
-              <img src="projects/1decien/hero.png" alt="1decien Website" loading="lazy" />
+              <img src="/projects/1decien/hero.png" alt="1decien Website" loading="lazy" />
             </div>
             <div className="project-card__content">
               <h3 className="project-card__title" data-en="1decien - Male Performance Supplements" data-es="1decien - Suplementos de Rendimiento Masculino">
@@ -107,10 +107,10 @@ const Projects = () => {
 
           {/* GoodPins - Featured Project */}
           <div className="project-card">
-            <img src="svg/extensions.svg" alt="Browser Extension" className="project-card__type-icon" />
+            <img src="/svg/extensions.svg" alt="Browser Extension" className="project-card__type-icon" />
             <div className="project-card__image">
-              <img src="projects/img/goodPinsLogoLight.png" alt="GoodPins Chrome Extension" loading="lazy" />
-              <img src="projects/img/goodPinsLogodark.png" alt="GoodPins Chrome Extension" loading="lazy" />
+              <img src="/projects/img/goodPinsLogoLight.png" alt="GoodPins Chrome Extension" loading="lazy" />
+              <img src="/projects/img/goodPinsLogodark.png" alt="GoodPins Chrome Extension" loading="lazy" />
             </div>
             <div className="project-card__content">
               <h3 className="project-card__title" data-en="GoodPins: Bookmark Manager Chrome Extension" data-es="GoodPins: Extensión de Chrome para Gestión de Marcadores">
@@ -143,9 +143,9 @@ const Projects = () => {
           </div>
 
           <div className="project-card">
-            <img src="svg/website.svg" alt="Website" className="project-card__type-icon" />
+            <img src="/svg/website.svg" alt="Website" className="project-card__type-icon" />
             <div className="project-card__image">
-              <img src="img/helleskin.png" alt="Helleskin Website" loading="lazy" />
+              <img src="/img/helleskin.png" alt="Helleskin Website" loading="lazy" />
             </div>
             <div className="project-card__content">
               <h3 className="project-card__title" data-en="Helleskin - Laboratory Client Acquisition Website" data-es="Helleskin - Sitio Web de Adquisición de Clientes de Laboratorio">
@@ -173,9 +173,9 @@ const Projects = () => {
           </div>
 
           <div className="project-card">
-            <img src="svg/extensions.svg" alt="Browser Extension" className="project-card__type-icon" />
+            <img src="/svg/extensions.svg" alt="Browser Extension" className="project-card__type-icon" />
             <div className="project-card__image">
-              <img src="img/goodNotes.png" alt="GoodNotes Helper Chrome Extension" loading="lazy" />
+              <img src="/img/goodNotes.png" alt="GoodNotes Helper Chrome Extension" loading="lazy" />
             </div>
             <div className="project-card__content">
               <h3 className="project-card__title" data-en="GoodNotes Helper: Call Center Productivity Extension" data-es="GoodNotes Helper: Extensión de Productividad para Call Center">
@@ -202,9 +202,9 @@ const Projects = () => {
           </div>
 
           <div className="project-card">
-            <img src="svg/website.svg" alt="Website" className="project-card__type-icon" />
+            <img src="/svg/website.svg" alt="Website" className="project-card__type-icon" />
             <div className="project-card__image">
-              <img src="img/gabis.png" alt="Gabis Restaurant Website" loading="lazy" />
+              <img src="/img/gabis.png" alt="Gabis Restaurant Website" loading="lazy" />
             </div>
             <div className="project-card__content">
               <h3 className="project-card__title" data-en="Gabis Restaurant - Responsive Website" data-es="Gabis Restaurant - Sitio Web Responsivo">
@@ -231,9 +231,9 @@ const Projects = () => {
           </div>
 
           <div className="project-card">
-            <img src="svg/website.svg" alt="Website" className="project-card__type-icon" />
+            <img src="/svg/website.svg" alt="Website" className="project-card__type-icon" />
             <div className="project-card__image">
-              <img src="img/doctorEnCasa.png" alt="Doctor en Casa Website" loading="lazy" />
+              <img src="/img/doctorEnCasa.png" alt="Doctor en Casa Website" loading="lazy" />
             </div>
             <div className="project-card__content">
               <h3 className="project-card__title" data-en="Doctor en Casa - Service Landing Page (SPA)" data-es="Doctor en Casa - Página de Aterrizaje de Servicio (SPA)">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RadialMenu from './RadialMenu';
 
-const Sidebar = ({ items, logoPath = "logo/portLogoLightNoBck.png", homeLink = "#hero" }) => {
+const Sidebar = ({ items, logoPath = "/logo/portLogoLightNoBck.png", homeLink = "#hero" }) => {
   const [activeSection, setActiveSection] = useState('hero');
   const [progress, setProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
