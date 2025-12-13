@@ -500,6 +500,16 @@ class PortfolioApp {
         });
     }
 
+    showSubmissionResultFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === '1') {
+            this.showNotification('Message sent successfully!', 'success');
+            // Clean URL
+            const newUrl = window.location.pathname + window.location.hash;
+            window.history.replaceState({}, document.title, newUrl);
+        }
+    }
+
     showNotification(message, type = 'info') {
         // Remove existing notification
         const existing = document.querySelector('.notification');
