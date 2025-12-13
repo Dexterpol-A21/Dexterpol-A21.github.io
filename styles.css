@@ -1346,6 +1346,7 @@ body {
 .project-card__links {
     display: flex;
     gap: var(--space-4);
+    flex-wrap: wrap;
 }
 
 .project-link {

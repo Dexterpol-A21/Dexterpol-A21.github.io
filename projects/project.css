@@ -1832,7 +1832,7 @@
 /* Fix button heights in hero actions */
 .project-hero__actions {
     display: flex;
-    gap: 0.375rem; /* Closer gap (6px) */
+    gap: var(--space-4);
     flex-wrap: wrap;
     align-items: center;
 }

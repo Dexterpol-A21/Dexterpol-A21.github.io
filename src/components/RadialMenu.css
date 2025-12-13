@@ -1,0 +1,147 @@
+/* Radial Menu Container - Fixed at bottom */
+.radial-menu-container {
+    position: fixed;
+    bottom: -20px; /* Moved higher from -25px */
+    left: 0;
+    width: 100%;
+    height: 140px;
+    z-index: 1000;
+    pointer-events: none;
+    display: none;
+    overflow: hidden;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+    .radial-menu-container {
+        display: block;
+    }
+    /* Hide standard sidebar toggle on mobile if we use this */
+    .sidebar-toggle {
+        display: none !important;
+    }
+}
+
+/* The Rotatable Ring */
+.radial-items-ring {
+    position: absolute;
+    bottom: -170px; /* Moved lower from -140px */
+    left: 50%;
+    margin-left: -140px; /* Center horizontally: half of width */
+    width: 280px; /* Diameter */
+    height: 280px; /* Diameter */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    transform-origin: center center;
+    pointer-events: auto;
+    touch-action: none; /* Prevent scrolling while dragging */
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smooth scroll animation */
+}
+
+.radial-items-ring.dragging {
+    transition: none; /* No transition while dragging */
+}
+
+[data-theme="dark"] .radial-items-ring {
+    background: rgba(23, 23, 23, 0.95);
+    border-color: rgba(255,255,255,0.05);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+}
+
+/* Center Marker / Logo Area */
+.radial-center-marker {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto; /* Allow clicks on logo */
+}
+
+.radial-center-marker a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+[data-theme="dark"] .radial-center-marker {
+    background: transparent;
+    box-shadow: none;
+}
+
+.radial-center-marker img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    /* Force black for light theme */
+    filter: brightness(0);
+}
+
+[data-theme="dark"] .radial-center-marker img {
+    /* Force white for dark theme */
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* Individual Menu Items */
+.radial-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--color-gray-600);
+    transform-origin: center center;
+}
+
+.radial-item i {
+    font-size: 1.2rem; /* Reduced from 1.5rem */
+    margin-bottom: 4px;
+    transition: color 0.3s;
+}
+
+.radial-item span {
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.radial-item.active {
+    color: var(--color-black);
+    /* Removed background and box-shadow as requested */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin-left: -35px;
+    margin-top: -35px;
+}
+
+.radial-item.active i {
+    transform: scale(1.3);
+    font-weight: bold;
+}
+
+[data-theme="dark"] .radial-item {
+    color: var(--color-gray-400);
+}
+
+[data-theme="dark"] .radial-item.active {
+    color: var(--color-black);
+}
