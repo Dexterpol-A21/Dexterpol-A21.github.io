@@ -1,0 +1,485 @@
+/* GoodBoard Specific Styles */
+
+/* Challenges Grid Styles */
+.challenges-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .challenges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.challenge-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+[data-theme="dark"] .challenge-card {
+    background: #171717;
+    border-color: #2a2a2a;
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-gray-400);
+}
+
+[data-theme="dark"] .challenge-card:hover {
+    border-color: var(--color-gray-600);
+}
+
+.challenge-card__header {
+    padding: var(--space-6);
+    background: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+[data-theme="dark"] .challenge-card__header {
+    background: #1a1a1a;
+    border-bottom-color: #2a2a2a;
+}
+
+.challenge-card__number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-gray-300);
+    line-height: 1;
+}
+
+[data-theme="dark"] .challenge-card__number {
+    color: #333;
+}
+
+.challenge-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin: 0;
+}
+
+[data-theme="dark"] .challenge-card__title {
+    color: #fafafa;
+}
+
+.challenge-card__content {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.challenge-problem h4,
+.challenge-solution h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.challenge-problem h4 {
+    color: #ef4444; /* Red for problem */
+}
+
+.challenge-solution h4 {
+    color: #10b981; /* Green for solution */
+}
+
+.challenge-problem p,
+.challenge-solution p {
+    color: var(--color-gray-600);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+[data-theme="dark"] .challenge-problem p,
+[data-theme="dark"] .challenge-solution p {
+    color: #a3a3a3;
+}
+
+/* Engineering Bento Grid Section (Copied from challenges.css) */
+.bento-grid-engineering {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .bento-grid-engineering {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .bento-grid-engineering {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+    
+    /* Pipeline card spans 2 rows on the right */
+    .pipeline-card {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+    }
+}
+
+/* Common Card Styles */
+.bento-card-eng {
+    background: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+[data-theme="dark"] .bento-card-eng {
+    background: #171717;
+    border-color: #2a2a2a;
+}
+
+.bento-card-eng:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary, #2563eb);
+}
+
+[data-theme="dark"] .bento-card-eng:hover {
+    border-color: var(--color-primary, #60a5fa);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* Challenge Card Specifics */
+.challenge-card__header {
+    padding: var(--space-6);
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+[data-theme="dark"] .challenge-card__header {
+    background: #1a1a1a;
+    border-bottom-color: #2a2a2a;
+}
+
+.challenge-card__header i {
+    font-size: var(--text-xl);
+    color: var(--color-gray-600);
+    background: var(--color-gray-100);
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+}
+
+.bento-card-eng:hover .challenge-card__header i {
+    color: var(--color-primary, #2563eb);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+[data-theme="dark"] .challenge-card__header i {
+    background: #262626;
+    color: #a3a3a3;
+}
+
+[data-theme="dark"] .bento-card-eng:hover .challenge-card__header i {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+}
+
+.challenge-card__header h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-black);
+    margin: 0;
+}
+
+[data-theme="dark"] .challenge-card__header h3 {
+    color: #fafafa;
+}
+
+.challenge-card__body {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    flex: 1;
+}
+
+.challenge-problem,
+.challenge-solution {
+    position: relative;
+    padding-left: var(--space-4);
+}
+
+.tag {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: var(--space-2);
+}
+
+.tag--problem {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+[data-theme="dark"] .tag--problem {
+    background: rgba(127, 29, 29, 0.3);
+    color: #fca5a5;
+}
+
+.tag--solution {
+    background: #dcfce7;
+    color: #166534;
+}
+
+[data-theme="dark"] .tag--solution {
+    background: rgba(20, 83, 45, 0.3);
+    color: #86efac;
+}
+
+.bento-card-eng p {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+[data-theme="dark"] .bento-card-eng p {
+    color: #a3a3a3;
+}
+
+.bento-card-eng code {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--color-gray-700);
+    transition: color var(--transition);
+}
+
+.bento-card-eng:hover code {
+    color: var(--color-primary, #2563eb);
+}
+
+[data-theme="dark"] .bento-card-eng code {
+    background: rgba(255, 255, 255, 0.1);
+    color: #d4d4d4;
+}
+
+[data-theme="dark"] .bento-card-eng:hover code {
+    color: #60a5fa;
+}
+
+/* Engineering Bento Grid Section (Copied from challenges.css) */
+.bento-grid-engineering {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .bento-grid-engineering {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .bento-grid-engineering {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+    
+    /* Pipeline card spans 2 rows on the right */
+    .pipeline-card {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+    }
+}
+
+/* Common Card Styles */
+.bento-card-eng {
+    background: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+[data-theme="dark"] .bento-card-eng {
+    background: #171717;
+    border-color: #2a2a2a;
+}
+
+.bento-card-eng:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary, #2563eb);
+}
+
+[data-theme="dark"] .bento-card-eng:hover {
+    border-color: var(--color-primary, #60a5fa);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* Challenge Card Specifics */
+.challenge-card__header {
+    padding: var(--space-6);
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+[data-theme="dark"] .challenge-card__header {
+    background: #1a1a1a;
+    border-bottom-color: #2a2a2a;
+}
+
+.challenge-card__header i {
+    font-size: var(--text-xl);
+    color: var(--color-gray-600);
+    background: var(--color-gray-100);
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+}
+
+.bento-card-eng:hover .challenge-card__header i {
+    color: var(--color-primary, #2563eb);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+[data-theme="dark"] .challenge-card__header i {
+    background: #262626;
+    color: #a3a3a3;
+}
+
+[data-theme="dark"] .bento-card-eng:hover .challenge-card__header i {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+}
+
+.challenge-card__header h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-black);
+    margin: 0;
+}
+
+[data-theme="dark"] .challenge-card__header h3 {
+    color: #fafafa;
+}
+
+.challenge-card__body {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    flex: 1;
+}
+
+.challenge-problem,
+.challenge-solution {
+    position: relative;
+    padding-left: var(--space-4);
+}
+
+.tag {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: var(--space-2);
+}
+
+.tag--problem {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+[data-theme="dark"] .tag--problem {
+    background: rgba(127, 29, 29, 0.3);
+    color: #fca5a5;
+}
+
+.tag--solution {
+    background: #dcfce7;
+    color: #166534;
+}
+
+[data-theme="dark"] .tag--solution {
+    background: rgba(20, 83, 45, 0.3);
+    color: #86efac;
+}
+
+.bento-card-eng p {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+[data-theme="dark"] .bento-card-eng p {
+    color: #a3a3a3;
+}
+
+.bento-card-eng code {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--color-gray-700);
+    transition: color var(--transition);
+}
+
+.bento-card-eng:hover code {
+    color: var(--color-primary, #2563eb);
+}
+
+[data-theme="dark"] .bento-card-eng code {
+    background: rgba(255, 255, 255, 0.1);
+    color: #d4d4d4;
+}
+
+[data-theme="dark"] .bento-card-eng:hover code {
+    color: #60a5fa;
+}

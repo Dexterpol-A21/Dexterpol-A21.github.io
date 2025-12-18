@@ -200,11 +200,11 @@
 
 /* Pipeline Card Styles */
 .pipeline-card {
-    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    /* background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%); */
 }
 
 [data-theme="dark"] .pipeline-card {
-    background: linear-gradient(180deg, #171717 0%, #0a0a0a 100%);
+    /* background: linear-gradient(180deg, #171717 0%, #0a0a0a 100%); */
 }
 
 .pipeline-header {
@@ -475,3 +475,4 @@
         height: 40px;
     }
 }
+

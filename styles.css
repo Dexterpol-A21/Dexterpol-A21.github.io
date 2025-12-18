@@ -1272,9 +1272,10 @@ body {
     transition: transform var(--transition-slow);
 }
 
-/* GoodPins & GoodScribe logo theme switching */
+/* GoodPins, GoodScribe & GoodBoard logo theme switching */
 .project-card__image img[src*="goodPinsLogo"],
-.project-card__image img[src*="goodScribeLogo"] {
+.project-card__image img[src*="goodScribeLogo"],
+.project-card__image img[src*="goodBoardLogo"] {
     object-fit: contain;
     padding: 0;
     background: transparent;
@@ -1284,7 +1285,8 @@ body {
 
 /* Hide dark logo in light theme, show light logo */
 [data-theme="light"] .project-card__image img[src*="goodPinsLogodark"],
-[data-theme="light"] .project-card__image img[src*="goodScribeLogoDark"] {
+[data-theme="light"] .project-card__image img[src*="goodScribeLogoDark"],
+[data-theme="light"] .project-card__image img[src*="goodBoardLogoBlack"] {
     display: none;
 }
 
@@ -1297,14 +1299,20 @@ body {
     transform: scale(1.2) translateY(10px);
 }
 
+[data-theme="light"] .project-card__image img[src*="goodBoardLogoLight"] {
+    display: block;
+}
+
 /* Hide light logo in dark theme, show dark logo */
 [data-theme="dark"] .project-card__image img[src*="goodPinsLogoLight"],
-[data-theme="dark"] .project-card__image img[src*="goodScribeLogoLight"] {
+[data-theme="dark"] .project-card__image img[src*="goodScribeLogoLight"],
+[data-theme="dark"] .project-card__image img[src*="goodBoardLogoLight"] {
     display: none;
 }
 
 [data-theme="dark"] .project-card__image img[src*="goodPinsLogodark"],
-[data-theme="dark"] .project-card__image img[src*="goodScribeLogoDark"] {
+[data-theme="dark"] .project-card__image img[src*="goodScribeLogoDark"],
+[data-theme="dark"] .project-card__image img[src*="goodBoardLogoBlack"] {
     display: block;
 }
 

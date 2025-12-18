@@ -33,6 +33,44 @@ const Projects = () => {
           {t("Featured Projects", "Proyectos Destacados")}
         </h2>
         <div className="projects__grid">
+          {/* GoodBoard Project */}
+          <div className="project-card">
+            <img src="/svg/extensions.svg" alt="Browser Extension" className="project-card__type-icon" />
+            <div className="project-card__image">
+              <img src="/projects/goodBoard/goodBoardLogoLight.png" alt="GoodBoard Extension" loading="lazy" />
+              <img src="/projects/goodBoard/goodBoardLogoBlack.png" alt="GoodBoard Extension" loading="lazy" />
+            </div>
+            <div className="project-card__content">
+              <h3 className="project-card__title" data-en="GoodBoard - Blackboard Extension" data-es="GoodBoard - Extensión para Blackboard">
+                {t("GoodBoard - Blackboard Extension", "GoodBoard - Extensión para Blackboard")}
+              </h3>
+              <p className="project-card__description" data-en="GoodBoard is a Chrome extension designed to modernize the Blackboard learning management system, specifically optimized for UVM. It replaces the outdated interface with a sleek, React-based dashboard that centralizes assignments, grades, and announcements, allowing students to focus on learning rather than navigating complex menus." data-es="GoodBoard es una extensión de Chrome diseñada para modernizar el sistema de gestión de aprendizaje Blackboard, optimizada específicamente para UVM. Reemplaza la interfaz anticuada con un elegante dashboard basado en React que centraliza tareas, calificaciones y anuncios, permitiendo a los estudiantes enfocarse en aprender en lugar de navegar por menús complejos.">
+                {t(
+                  "GoodBoard is a Chrome extension designed to modernize the Blackboard learning management system, specifically optimized for UVM. It replaces the outdated interface with a sleek, React-based dashboard that centralizes assignments, grades, and announcements, allowing students to focus on learning rather than navigating complex menus.",
+                  "GoodBoard es una extensión de Chrome diseñada para modernizar el sistema de gestión de aprendizaje Blackboard, optimizada específicamente para UVM. Reemplaza la interfaz anticuada con un elegante dashboard basado en React que centraliza tareas, calificaciones y anuncios, permitiendo a los estudiantes enfocarse en aprender en lugar de navegar por menús complejos."
+                )}
+              </p>
+              <div className="project-card__tech">
+                <span>React</span>
+                <span>Vite</span>
+                <span>Tailwind CSS</span>
+                <span>Recharts</span>
+                <span>Chrome API</span>
+              </div>
+              <div className="project-card__links">
+                <a href="https://github.com/Dexterpol-A21/goodBoard" target="_blank" rel="noopener noreferrer" className="project-link">
+                  <i className="fas fa-external-link-alt"></i> <span data-en="Live Demo" data-es="Demo en Vivo">{t("Live Demo", "Demo en Vivo")}</span>
+                </a>
+                <a href="https://github.com/Dexterpol-A21/goodBoard" target="_blank" rel="noopener noreferrer" className="project-link">
+                  <i className="fab fa-github"></i> <span data-en="GitHub" data-es="GitHub">{t("GitHub", "GitHub")}</span>
+                </a>
+                <a href="projects/goodboard.html" className="project-link">
+                  <i className="fas fa-book-open"></i> <span data-en="View Details" data-es="Ver Detalles">{t("View Details", "Ver Detalles")}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
           {/* GoodScribe Project */}
           <div className="project-card">
             <div className="project-card__type-icons">
@@ -116,10 +154,10 @@ const Projects = () => {
               <h3 className="project-card__title" data-en="GoodPins: Bookmark Manager Chrome Extension" data-es="GoodPins: Extensión de Chrome para Gestión de Marcadores">
                 {t("GoodPins: Bookmark Manager Chrome Extension", "GoodPins: Extensión de Chrome para Gestión de Marcadores")}
               </h3>
-              <p className="project-card__description" data-en="GoodPins is a Chrome extension engineered for developers who demand control over their bookmark workflow. The UI layer is driven entirely by vanilla JavaScript, backed by modular controllers that orchestrate drag-and-drop interactions, theme switching, and state hydration without relying on third-party frameworks. Every interaction is designed to feel native to Chrome thanks to the extension action service worker and a purpose-built popup experience." data-es="GoodPins es una extensión de Chrome diseñada para desarrolladores que requieren control absoluto sobre su flujo de marcadores. La capa de UI está impulsada completamente con JavaScript puro, respaldada por controladores modulares que orquestan interacciones de arrastrar y soltar, cambio de tema e hidratación de estado sin depender de frameworks externos. Cada interacción se siente nativa de Chrome gracias al service worker de la acción de extensión y una experiencia popup hecha a medida.">
+              <p className="project-card__description" data-en="GoodPins is a Chrome extension for developers who need total control over their bookmarks. Built with vanilla JavaScript and modular controllers, it offers native performance without third-party frameworks. Features include recursive drag-and-drop, custom themes, and local-first state management for a seamless experience." data-es="GoodPins es una extensión de Chrome para desarrolladores que necesitan control total sobre sus marcadores. Construida con JavaScript puro y controladores modulares, ofrece rendimiento nativo sin frameworks de terceros. Incluye arrastrar y soltar recursivo, temas personalizados y gestión de estado local para una experiencia fluida.">
                 {t(
-                  "GoodPins is a Chrome extension engineered for developers who demand control over their bookmark workflow. The UI layer is driven entirely by vanilla JavaScript, backed by modular controllers that orchestrate drag-and-drop interactions, theme switching, and state hydration without relying on third-party frameworks. Every interaction is designed to feel native to Chrome thanks to the extension action service worker and a purpose-built popup experience.",
-                  "GoodPins es una extensión de Chrome diseñada para desarrolladores que requieren control absoluto sobre su flujo de marcadores. La capa de UI está impulsada completamente con JavaScript puro, respaldada por controladores modulares que orquestan interacciones de arrastrar y soltar, cambio de tema e hidratación de estado sin depender de frameworks externos. Cada interacción se siente nativa de Chrome gracias al service worker de la acción de extensión y una experiencia popup hecha a medida."
+                  "GoodPins is a Chrome extension for developers who need total control over their bookmarks. Built with vanilla JavaScript and modular controllers, it offers native performance without third-party frameworks. Features include recursive drag-and-drop, custom themes, and local-first state management for a seamless experience.",
+                  "GoodPins es una extensión de Chrome para desarrolladores que necesitan control total sobre sus marcadores. Construida con JavaScript puro y controladores modulares, ofrece rendimiento nativo sin frameworks de terceros. Incluye arrastrar y soltar recursivo, temas personalizados y gestión de estado local para una experiencia fluida."
                 )}
               </p>
               <div className="project-card__tech">

@@ -22,6 +22,16 @@ const allTechnologies = {
     { name: 'JavaScript', icon: '../svg/javascript.svg', type: 'img', color: '#F7DF1E' },
     { name: 'Chrome Extension API', icon: '../svg/chromewebstore.svg', type: 'img', color: '#4285F4', isMask: true }
   ],
+  goodboard: [
+    { name: 'HTML5', icon: '../svg/html5.svg', type: 'img', color: '#E34F26' },
+    { name: 'CSS3', icon: '../svg/css.svg', type: 'img', color: '#663399' },
+    { name: 'JavaScript', icon: '../svg/javascript.svg', type: 'img', color: '#F7DF1E' },
+    { name: 'React', icon: '../svg/react.svg', type: 'img', color: '#61DAFB' },
+    { name: 'Tailwind CSS', icon: '../svg/tailwindcss.svg', type: 'img', color: '#38BDF8' },
+    { name: 'Vite', icon: '../svg/vite.svg', type: 'img', color: '#646CFF' },
+    { name: 'Recharts', icon: 'fas fa-chart-pie', type: 'icon', color: '#22b5bf' },
+    { name: 'Chrome Extension API', icon: '../svg/chromewebstore.svg', type: 'img', color: '#4285F4', isMask: true }
+  ],
   default: [
     { name: 'HTML5', icon: '../svg/html5.svg', type: 'img', color: '#E34F26' },
     { name: 'CSS3', icon: '../svg/css.svg', type: 'img', color: '#663399' },
@@ -39,6 +49,8 @@ const TechStack = () => {
       setTechnologies(allTechnologies.goodscribe);
     } else if (path.includes('goodpins')) {
       setTechnologies(allTechnologies.goodpins);
+    } else if (path.includes('goodboard')) {
+      setTechnologies(allTechnologies.goodboard);
     } else {
       setTechnologies(allTechnologies.default);
     }

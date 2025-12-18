@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="GoodScribe - Real-time transcription and translation tool for professional interpreters using Deepgram and Firebase.">
-    <meta name="keywords" content="GoodScribe, Chrome Extension, Transcription, Translation, Interpreter, Deepgram, Firebase, Paul Contreras">
+    <meta name="description" content="GoodBoard - A modern Chrome Extension for Blackboard UVM. Features Kanban, Gantt charts, and a clean dashboard.">
+    <meta name="keywords" content="GoodBoard, Chrome Extension, Blackboard, UVM, Kanban, Gantt, React, Vite, Paul Contreras">
     <meta name="author" content="Paul Eduardo Contreras Lobato">
     <meta name="robots" content="index, follow">
     
@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
     <link rel="manifest" href="../favicon/site.webmanifest">
-    <link rel="canonical" href="https://dexterpol-a21.github.io/projects/goodscribe.html">
+    <link rel="canonical" href="https://dexterpol-a21.github.io/projects/goodboard.html">
     
     <!-- Force scroll to top on load -->
     <script>
@@ -30,7 +30,7 @@
         };
     </script>
     
-    <title>GoodScribe - Transcription Tool | Paul Eduardo Contreras Lobato</title>
+    <title>GoodBoard - Blackboard Extension | Paul Eduardo Contreras Lobato</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../src/styles/projects/project.css">
     <link rel="stylesheet" href="../src/styles/projects/challenges.css">
+    <link rel="stylesheet" href="../src/projects/goodBoard/goodboard.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -64,30 +65,28 @@
         <div id="react-project-overview"></div>
 
         <!-- Features Section (React) -->
-        <div id="react-project-features"></div>
+        <div id="react-goodboard-features"></div>
 
         <!-- Features Overview Section (React) -->
         <div id="react-features-overview"></div>
 
-        <!-- Architecture Overview Section (React) -->
+        <!-- Technical Architecture (React) -->
         <div id="react-architecture"></div>
 
-        <!-- Tech Stack Section -->
-        <section class="section tech-stack" id="tech-stack" style="background-color: var(--color-white);">
+        <!-- Technologies Used -->
+        <section class="section tech-stack" id="tech" style="background-color: var(--color-white);">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title" data-en="Technologies Used" data-es="Tecnologías Utilizadas">Technologies Used</h2>
-                    <div class="section-line"></div>
-                </div>
+                <h2 class="section-title" data-en="Technologies Used" data-es="Tecnologías Utilizadas">Technologies Used</h2>
+                <div class="section-line"></div>
                 
                 <div id="react-tech-stack"></div>
             </div>
         </section>
 
-        <!-- Engineering & Architecture Bento Grid (React) -->
+        <!-- Engineering Challenges (React) -->
         <div id="react-engineering"></div>
 
-        <!-- Future Roadmap Section (React) -->
+        <!-- Future Roadmap (React) -->
         <div id="react-roadmap"></div>
 
         <!-- Access & Installation Section (React) -->
@@ -101,32 +100,37 @@
     <!-- Scripts -->
     <script>
         window.projectHeroProps = {
-            title: { en: "GoodScribe", es: "GoodScribe" },
+            title: { en: "GoodBoard", es: "GoodBoard" },
             subtitle: { 
-                en: "Real-time Transcription & Translation for Interpreters", 
-                es: "Transcripción y Traducción en Tiempo Real para Intérpretes" 
+                en: "Your Blackboard, but better.", 
+                es: "Tu Blackboard, pero bien hecho." 
             },
-            iconSrc: "goodScribe/goodScribeIconNoBckgr.PNG",
+            iconSrc: "goodBoard/goodBoardIcon.png",
             dates: { en: "Dec 2025 - Present", es: "Dic 2025 - Presente" },
             version: "v1.0.0",
-            category: { en: "Productivity / AI", es: "Productividad / IA" },
-            type: { en: "SaaS Platform", es: "Plataforma SaaS" },
-            platform: { en: "Web & Extension", es: "Web y Extensión" },
+            category: { en: "Productivity / Education", es: "Productividad / Educación" },
+            type: { en: "Local Utility", es: "Utilidad Local" },
+            typeIcon: "fas fa-laptop",
+            platform: { en: "Extension", es: "Extensión" },
+            platformIcon: "fas fa-puzzle-piece",
             role: { en: "Personal Project", es: "Proyecto Personal" },
-            demoLink: "#",
+            demoLink: "https://chromewebstore.google.com/detail/goodboard/placeholder",
+            demoLinkText: { en: "View in Chrome Store", es: "Ver en Chrome Store" },
+            demoLinkIcon: "../svg/chromewebstore.svg",
+            demoLinkIsImage: true,
             secondaryLink: {
-                url: "#",
-                text: { en: "Extension", es: "Extensión" },
-                icon: "../svg/chromewebstore.svg",
-                isImage: true
+                url: "https://github.com/Dexterpol-A21/goodBoard",
+                text: { en: "View on GitHub", es: "Ver en GitHub" },
+                icon: "fab fa-github",
+                isImage: false
             }
         };
 
         window.projectOverviewProps = {
-            title: { en: "Empowering Interpreters with AI", es: "Empoderando a Intérpretes con IA" },
+            title: { en: "Transforming the Student Experience", es: "Transformando la Experiencia Estudiantil" },
             text: { 
-                en: "GoodScribe is a dual-platform tool (Web & Extension) for professional interpreters. Powered by Deepgram AI, it delivers real-time transcription and translation with integrated glossary management. By instantly highlighting key terminology, it helps interpreters maintain accuracy and speed in high-pressure environments.", 
-                es: "GoodScribe es una herramienta de doble plataforma (Web y Extensión) para intérpretes profesionales. Impulsada por la IA de Deepgram, ofrece transcripción y traducción en tiempo real con gestión integrada de glosarios. Al resaltar instantáneamente la terminología clave, ayuda a los intérpretes a mantener la precisión y velocidad en entornos de alta presión." 
+                en: "GoodBoard is a Chrome extension designed to modernize the Blackboard learning management system, specifically optimized for UVM. It replaces the outdated interface with a sleek, React-based dashboard that centralizes assignments, grades, and announcements, allowing students to focus on learning rather than navigating complex menus.", 
+                es: "GoodBoard es una extensión de Chrome diseñada para modernizar el sistema de gestión de aprendizaje Blackboard, optimizada específicamente para UVM. Reemplaza la interfaz anticuada con un elegante dashboard basado en React que centraliza tareas, calificaciones y anuncios, permitiendo a los estudiantes enfocarse en aprender en lugar de navegar por menús complejos." 
             }
         };
     </script>

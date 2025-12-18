@@ -12,8 +12,13 @@ const ProjectHero = ({
   platform,
   role,
   demoLink,
+  demoLinkText,
+  demoLinkIcon,
+  demoLinkIsImage,
   secondaryLink, // { url, text, icon, isImage }
-  backLink = "../index.html#projects"
+  backLink = "../index.html#projects",
+  typeIcon = "fas fa-cloud",
+  platformIcon = "fas fa-globe"
 }) => {
   const { language, setLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
@@ -80,11 +85,11 @@ const ProjectHero = ({
               <span>{t(category)}</span>
             </div>
             <div className="meta-item">
-              <i className="fas fa-cloud"></i>
+              <i className={typeIcon}></i>
               <span>{t(type)}</span>
             </div>
             <div className="meta-item">
-              <i className="fas fa-globe"></i>
+              <i className={platformIcon}></i>
               <span>{t(platform)}</span>
             </div>
             <div className="meta-item">
@@ -96,8 +101,12 @@ const ProjectHero = ({
           <div className="project-hero__actions">
             {demoLink && (
               <a href={demoLink} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
-                <i className="fas fa-external-link-alt"></i>
-                <span>{language === 'en' ? 'Live Demo' : 'Demo en Vivo'}</span>
+                {demoLinkIsImage ? (
+                  <img src={demoLinkIcon} alt="Demo Action" style={{ width: '20px', height: '20px', marginRight: '8px' }} />
+                ) : (
+                  <i className={demoLinkIcon || "fas fa-external-link-alt"}></i>
+                )}
+                <span>{demoLinkText ? t(demoLinkText) : (language === 'en' ? 'Live Demo' : 'Demo en Vivo')}</span>
               </a>
             )}
             

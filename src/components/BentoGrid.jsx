@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectSection from './ProjectSection';
+import Tilt from 'react-parallax-tilt';
 import { useLanguage } from '../hooks/useAppConfig';
 
 const BentoGrid = ({ id, title, items, background = 'gray' }) => {
@@ -15,7 +16,15 @@ const BentoGrid = ({ id, title, items, background = 'gray' }) => {
       
       <div className="bento-grid">
         {items.map((item, index) => (
-          <div key={index} className={`bento-card bento-card--${item.size}`}>
+          <Tilt 
+            key={index} 
+            className={`bento-card bento-card--${item.size}`}
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={5}
+            perspective={1000}
+            scale={1.02}
+            transitionSpeed={1500}
+          >
             <div className="bento-card__bg">
               <i className={item.icon}></i>
             </div>
@@ -26,7 +35,7 @@ const BentoGrid = ({ id, title, items, background = 'gray' }) => {
               <h3 className="bento-card__title">{t(item.title)}</h3>
               <p className="bento-card__description">{t(item.description)}</p>
             </div>
-          </div>
+          </Tilt>
         ))}
       </div>
     </ProjectSection>
