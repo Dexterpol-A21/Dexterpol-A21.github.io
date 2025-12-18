@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         goodpins: resolve(__dirname, 'projects/goodpins.html'),
         goodscribe: resolve(__dirname, 'projects/goodscribe.html'),
+        goodboard: resolve(__dirname, 'projects/goodboard.html'),
       },
     },
   },
