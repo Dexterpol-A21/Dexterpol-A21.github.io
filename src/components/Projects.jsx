@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Tilt from 'react-parallax-tilt';
 
 const projectsData = [
   {
@@ -86,7 +85,8 @@ const projectsData = [
       "/projects/img/goodPinsLogodark.png"
     ],
     typeIcon: "/svg/extensions.svg",
-    color: "#FFFFFF" // White
+    color: "#FFFFFF", // White
+    textColor: "#000000" // Black text for visibility on white background
   },
   {
     id: 'helleskin',
@@ -195,21 +195,13 @@ const Projects = () => {
         </h2>
         <div className="projects__grid">
           {projectsData.map((project) => (
-            <Tilt
-              key={project.id}
-              tiltMaxAngleX={3}
-              tiltMaxAngleY={3}
-              perspective={1000}
-              scale={1.02}
-              transitionSpeed={1500}
-              className="project-card-tilt"
-              style={{ height: '100%' }}
-            >
               <div 
+                key={project.id}
                 className="project-card" 
                 style={{ 
                   height: '100%', 
-                  '--hover-glow': project.color 
+                  '--hover-glow': project.color,
+                  '--hover-text': project.textColor || '#ffffff'
                 }}
               >
                 {project.typeIcons ? (
@@ -251,14 +243,10 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            </Tilt>
           ))}
         </div>
       </div>
       <style jsx>{`
-        .project-card-tilt {
-          transform-style: preserve-3d;
-        }
         .project-card {
           transition: box-shadow 0.3s ease, border-color 0.3s ease;
           border: 1px solid transparent;

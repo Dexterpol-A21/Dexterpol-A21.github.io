@@ -208,10 +208,10 @@ export const goodBoardInstallation = {
             icon: "../svg/chromewebstore.svg",
             isImage: true,
             button: {
-                text: { en: "Coming Soon", es: "Próximamente" },
+                text: { en: "Install Now", es: "Instalar Ahora" },
                 icon: "fas fa-download",
-                link: "#",
-                disabled: true
+                link: "https://chromewebstore.google.com/detail/goodboard/lgpcjpbmmlhffneoobfaheejlajfbpjn",
+                disabled: false
             }
         },
         {

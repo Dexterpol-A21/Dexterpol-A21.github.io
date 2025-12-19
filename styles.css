@@ -1420,6 +1420,13 @@ body {
     font-size: var(--text-xs);
     border-radius: var(--radius);
     font-weight: var(--font-medium);
+    transition: var(--transition);
+    cursor: default;
+}
+
+.project-card__tech span:hover {
+    background: var(--hover-glow, var(--color-gray-200));
+    color: var(--hover-text, var(--color-white));
 }
 
 .project-card__links {
@@ -1440,7 +1447,7 @@ body {
 }
 
 .project-link:hover {
-    color: var(--color-black);
+    color: var(--hover-glow, var(--color-black));
 }
 
 /* Contact Section */
