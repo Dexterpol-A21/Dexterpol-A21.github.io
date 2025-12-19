@@ -14,7 +14,7 @@ const projectsData = [
     },
     tech: ["React", "Vite", "Tailwind CSS", "Recharts", "Chrome API"],
     links: [
-      { url: "https://github.com/Dexterpol-A21/goodBoard", icon: "fas fa-external-link-alt", label: { en: "Live Demo", es: "Demo en Vivo" } },
+      { url: "https://chromewebstore.google.com/detail/goodboard/lgpcjpbmmlhffneoobfaheejlajfbpjn", icon: "fas fa-external-link-alt", label: { en: "Live Demo", es: "Demo en Vivo" } },
       { url: "https://github.com/Dexterpol-A21/goodBoard", icon: "fab fa-github", label: { en: "GitHub", es: "GitHub" } },
       { url: "projects/goodboard.html", icon: "fas fa-book-open", label: { en: "View Details", es: "Ver Detalles" } }
     ],
