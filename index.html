@@ -329,133 +329,155 @@
         <section class="section skills" id="skills">
             <div class="container">
                 <h2 class="section__title" data-en="Technical Skills" data-es="Habilidades Técnicas">Technical Skills</h2>
-                <div class="skills__grid">
-                    <div class="skill-category">
-                        <h3 class="skill-category__title">
-                            <i class="fas fa-code"></i>
-                            <span data-en="Front-End Development" data-es="Desarrollo Front-End">Front-End Development</span>
-                        </h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span class="skill-item__name">HTML5</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="90"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Advanced" data-es="Avanzado">Advanced</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-item__name">CSS3</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="85"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Advanced" data-es="Avanzado">Advanced</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-item__name">JavaScript (ES6+)</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="80"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Intermediate" data-es="Intermedio">Intermediate</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-item__name">Chrome APIs</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="75"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Intermediate" data-es="Intermedio">Intermediate</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3 class="skill-category__title">
-                            <i class="fas fa-server"></i>
-                            <span data-en="Back-End & Databases" data-es="Back-End y Bases de Datos">Back-End & Databases</span>
-                        </h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span class="skill-item__name">MySQL</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="75"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Intermediate" data-es="Intermedio">Intermediate</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-item__name">Oracle SQL / PL/SQL</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="75"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Intermediate" data-es="Intermedio">Intermediate</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-item__name">PostgreSQL</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="60"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Basic" data-es="Básico">Basic</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-item__name">Java</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="60"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Basic" data-es="Básico">Basic</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-item__name" data-en="C Programming" data-es="Programación en C">C Programming</span>
-                                <div class="skill-item__bar">
-                                    <div class="skill-item__progress" data-width="55"></div>
-                                </div>
-                                <span class="skill-item__level" data-en="Basic" data-es="Básico">Basic</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3 class="skill-category__title">
-                            <i class="fas fa-tools"></i>
-                            <span data-en="Tools & Methodologies" data-es="Herramientas y Metodologías">Tools & Methodologies</span>
-                        </h3>
-                        <div class="tools-grid">
-                            <div class="tool-item">
-                                <i class="fab fa-git-alt"></i>
-                                <span>Git/GitHub</span>
-                            </div>
-                            <div class="tool-item">
+                
+                <div class="skills-tabs-container">
+                    <input type="radio" name="skills_tabs" id="tab-stack" class="skills-tabs-inputs" checked>
+                    <input type="radio" name="skills_tabs" id="tab-backend" class="skills-tabs-inputs">
+                    <input type="radio" name="skills_tabs" id="tab-other" class="skills-tabs-inputs">
+
+                    <nav class="skills-nav">
+                        <label for="tab-stack">
+                            <span class="category-label">
                                 <i class="fas fa-code"></i>
-                                <span>VS Code</span>
+                                <span data-en="Front-End Development" data-es="Desarrollo Front-End">Front-End Development</span>
+                            </span>
+                        </label>
+                        <label for="tab-backend">
+                            <span class="category-label">
+                                <i class="fas fa-server"></i>
+                                <span data-en="Back-End & Databases" data-es="Back-End y Bases de Datos">Back-End & Databases</span>
+                            </span>
+                        </label>
+                        <label for="tab-other">
+                            <span class="category-label">
+                                <i class="fas fa-tools"></i>
+                                <span data-en="Tools & Methodologies" data-es="Herramientas y Metodologías">Tools & Methodologies</span>
+                            </span>
+                        </label>
+                    </nav>
+
+                    <div class="skills-content">
+                        <!-- Front-End -->
+                        <div id="content-stack" class="skills-content-grid">
+                            <div class="skill-card" style="--hover-color: #E34F26">
+                                <img src="svg/html5.svg" alt="HTML5">
+                                <span>HTML5</span>
                             </div>
-                            <div class="tool-item">
-                                <i class="fas fa-robot"></i>
-                                <span data-en="AI Integration" data-es="Integración de IA">AI Integration</span>
+                            <div class="skill-card" style="--hover-color: #1572B6">
+                                <img src="svg/css.svg" alt="CSS3">
+                                <span>CSS3</span>
                             </div>
-                            <div class="tool-item">
-                                <i class="fas fa-tasks"></i>
-                                <span>Agile/Scrum</span>
+                            <div class="skill-card" style="--hover-color: #F7DF1E">
+                                <img src="svg/javascript.svg" alt="JavaScript">
+                                <span>JavaScript (ES6+)</span>
                             </div>
-                            <div class="tool-item">
-                                <i class="fab fa-windows"></i>
-                                <span>Windows</span>
+                            <div class="skill-card" style="--hover-color: #61DAFB">
+                                <img src="svg/react.svg" alt="React">
+                                <span>React</span>
                             </div>
-                            <div class="tool-item">
+                            <div class="skill-card" style="--hover-color: #06B6D4">
+                                <img src="svg/tailwindcss.svg" alt="Tailwind CSS">
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #FF5D01">
+                                <img src="svg/astro-icon.svg" alt="Astro">
+                                <span>Astro</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #646CFF">
+                                <img src="svg/vite.svg" alt="Vite">
+                                <span>Vite</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #4285F4">
+                                <img src="svg/chromewebstore.svg" alt="Chrome APIs">
+                                <span>Chrome APIs</span>
+                            </div>
+                        </div>
+
+                        <!-- Back-End & Databases -->
+                        <div id="content-backend" class="skills-content-grid">
+                            <div class="skill-card" style="--hover-color: #339933">
+                                <img src="svg/nodedotjs.svg" alt="Node.js">
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #4479A1">
+                                <img src="svg/mysql.svg" alt="MySQL">
+                                <span>MySQL</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #3ECF8E">
+                                <i class="fas fa-bolt"></i>
+                                <span>Supabase</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #336791">
+                                <img src="svg/postgresql.svg" alt="PostgreSQL">
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #FFCA28">
+                                <img src="svg/firebase.svg" alt="Firebase">
+                                <span>Firebase</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #007396">
+                                <i class="fab fa-java"></i>
+                                <span>Java</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #00599C">
+                                <img src="svg/c.svg" alt="C Programming">
+                                <span>C Programming</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #38EDAC">
+                                <img src="svg/deepgram.svg" alt="Deepgram SDK">
+                                <span>Deepgram SDK</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #007FFF">
+                                <img src="svg/azure_icon_189202.svg" alt="Azure AI">
+                                <span>Azure AI</span>
+                            </div>
+                        </div>
+
+                        <!-- Tools & Methodologies -->
+                        <div id="content-other" class="skills-content-grid">
+                            <div class="skill-card" style="--hover-color: #F05032">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git / GitHub</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #0091D5">
+                                <i class="fas fa-sync"></i>
+                                <span>Agile / Scrum</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #FCC624">
                                 <i class="fab fa-linux"></i>
                                 <span>Linux</span>
                             </div>
-                            <div class="tool-item">
-                                <i class="fas fa-network-wired"></i>
-                                <span data-en="Network Configuration" data-es="Configuración de Redes">Network Configuration</span>
+                            <div class="skill-card" style="--hover-color: #0078D6">
+                                <i class="fab fa-windows"></i>
+                                <span>Windows</span>
                             </div>
-                            <div class="tool-item">
-                                <i class="fas fa-chart-line"></i>
+                            <div class="skill-card" style="--hover-color: #1BA0D7">
+                                <img src="svg/cisco.svg" alt="Cisco">
+                                <span>Cisco</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #EF5B25">
+                                <i class="fas fa-exchange-alt"></i>
                                 <span>RESTful APIs</span>
                             </div>
-                            <div class="tool-item">
+                            <div class="skill-card" style="--hover-color: #4285F4">
                                 <i class="fab fa-google"></i>
                                 <span>Google Ads</span>
                             </div>
-                            <div class="tool-item">
+                            <div class="skill-card" style="--hover-color: #246FDB">
                                 <i class="fas fa-tag"></i>
-                                <span>Google Tag Manager</span>
+                                <span>Tag Manager</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #4285F4">
+                                <img src="svg/googlecloud.svg" alt="Google Cloud">
+                                <span>Google Cloud</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #F38020">
+                                <img src="svg/cloudflare.svg" alt="Cloudflare">
+                                <span>Cloudflare</span>
+                            </div>
+                            <div class="skill-card" style="--hover-color: #8e44ad">
+                                <i class="fas fa-robot"></i>
+                                <span data-en="AI Integration" data-es="Integración IA">AI Integration</span>
                             </div>
                         </div>
                     </div>
