@@ -1422,11 +1422,13 @@ body {
     font-weight: var(--font-medium);
     transition: var(--transition);
     cursor: default;
+    border: 1px solid transparent;
 }
 
 .project-card__tech span:hover {
-    background: var(--hover-glow, var(--color-gray-200));
-    color: var(--hover-text, var(--color-white));
+    background: var(--color-gray-100);
+    color: var(--hover-border, var(--color-black));
+    border-color: var(--hover-border, var(--color-black));
 }
 
 .project-card__links {

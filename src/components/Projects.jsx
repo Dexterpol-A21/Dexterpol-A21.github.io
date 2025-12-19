@@ -201,7 +201,8 @@ const Projects = () => {
                 style={{ 
                   height: '100%', 
                   '--hover-glow': project.color,
-                  '--hover-text': project.textColor || '#ffffff'
+                  '--hover-text': project.textColor || '#ffffff',
+                  '--hover-border': project.id === 'goodpins' ? '#000000' : project.color
                 }}
               >
                 {project.typeIcons ? (
