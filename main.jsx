@@ -11,6 +11,7 @@ import Architecture from './src/components/Architecture'
 import Engineering from './src/components/Engineering'
 import Roadmap from './src/components/Roadmap'
 import Installation from './src/components/Installation'
+import ContactButton from './src/components/ContactButton'
 import { 
   goodBoardFeatures, 
   goodBoardOverview, 
@@ -218,6 +219,38 @@ if (installationElement) {
       </React.StrictMode>
     )
   }
+}
+
+// Find a container to mount ContactButton (Send Message)
+const contactButtonElement = document.getElementById('react-contact-button')
+if (contactButtonElement) {
+  ReactDOM.createRoot(contactButtonElement).render(
+    <React.StrictMode>
+      <ContactButton 
+        textEn="Send Message"
+        textEs="Enviar Mensaje"
+        isSubmit={true}
+        icon="fas fa-paper-plane"
+        className="btn btn--primary btn--full"
+      />
+    </React.StrictMode>
+  )
+}
+
+// Find a container to mount Get In Touch Button
+const getInTouchButtonElement = document.getElementById('react-get-in-touch-button')
+if (getInTouchButtonElement) {
+  ReactDOM.createRoot(getInTouchButtonElement).render(
+    <React.StrictMode>
+      <ContactButton 
+        textEn="Get In Touch"
+        textEs="Contáctame"
+        href="#contact"
+        icon={null}
+        className="btn btn--primary"
+      />
+    </React.StrictMode>
+  )
 }
 
 console.log('Vite + React initialized')

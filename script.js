@@ -206,6 +206,34 @@ class PortfolioApp {
 
     // Scroll effects and animations
     setupScrollEffects() {
+        // Inject AOS attributes programmatically
+        document.querySelectorAll('.section__title').forEach(el => el.setAttribute('data-aos', 'fade-up'));
+        document.querySelectorAll('.about__text').forEach(el => el.setAttribute('data-aos', 'fade-right'));
+        document.querySelectorAll('.about__stats').forEach(el => el.setAttribute('data-aos', 'fade-left'));
+        document.querySelectorAll('.info-card').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', index * 100);
+        });
+        document.querySelectorAll('.experience-card').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+        });
+        document.querySelectorAll('.skill-card').forEach((el, index) => {
+            el.setAttribute('data-aos', 'zoom-in');
+            el.setAttribute('data-aos-delay', (index % 5) * 50);
+        });
+        document.querySelectorAll('.contact__info').forEach(el => el.setAttribute('data-aos', 'fade-right'));
+        document.querySelectorAll('.contact__form').forEach(el => el.setAttribute('data-aos', 'fade-left'));
+
+        // Initialize AOS
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50
+            });
+        }
+
         // Only keep scroll-triggered animations
         this.setupScrollAnimations();
         this.setupTimelineProgress();
