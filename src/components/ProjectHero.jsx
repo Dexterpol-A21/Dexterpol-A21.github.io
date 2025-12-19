@@ -102,7 +102,7 @@ const ProjectHero = ({
             {demoLink && (
               <a href={demoLink} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
                 {demoLinkIsImage ? (
-                  <img src={demoLinkIcon} alt="Demo Action" style={{ width: '20px', height: '20px', marginRight: '8px' }} />
+                  <img src={demoLinkIcon} alt="Demo Action" className="btn-icon" />
                 ) : (
                   <i className={demoLinkIcon || "fas fa-external-link-alt"}></i>
                 )}
