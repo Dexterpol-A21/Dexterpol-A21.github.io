@@ -1,0 +1,63 @@
+---
+import { ProposalEditorial } from './FeaturedProposals.tsx';
+// Archived layouts (not mounted): ProposalCinematic (A), ProposalSpotlight (D)
+// Highlight fragments with [[...]] — renders as white Gambetta pills (hero style)
+
+const featured = [
+  {
+    title: "GoodScribe",
+    intro: "Plataforma para intérpretes con [[transcripción en vivo]], [[traducción]] y [[glosarios personalizados]]. Pensada para acompañar la sesión sin interrumpir el flujo de trabajo.",
+    story: "La construí a partir de mi trabajo como [[intérprete remoto]]. En cada llamada necesitaba apoyo claro y rápido — terminología, contexto, lo que se decía en el momento. No encontraba una herramienta que encajara, así que la armé yo: del [[problema al producto]] en producción.",
+    role: "Armé el producto [[de punta a punta]]: UI, transcripción y traducción en vivo, glosarios, auth, datos y [[deploy en producción]].",
+    accent: "#10b981",
+    images: ["/img/goodscribe_new.png", "/app.goodscribe.org_.png", "/img/goodscribe_app_new.png"],
+    tags: ["Next.js", "Astro", "React", "Deepgram", "DeepL", "Supabase", "Cloudflare", "Tailwind"],
+    link: "https://goodscribe.org",
+    linkLabel: "Visitar Sitio",
+    github: "https://github.com/Dexterpol-A21/goodscribe-app",
+  },
+  {
+    title: "Gabis",
+    intro: "Sitio corporativo para restaurante: [[menú digital]], historia de la marca y navegación multi-sección pensada para [[móvil]]. Cada sección refuerza la [[identidad visual]] del local sin fricción al pedir o explorar.",
+    story: "Cliente real de NoProb. El brief no era “una landing bonita”: necesitaban [[presencia digital]] que respetara la marca, contara quiénes son y dejara el menú a un toque en el teléfono. El reto era equilibrar [[atmósfera y utilidad]] — que se sintiera el restaurante y, a la vez, que el cliente encontrara platos y precios sin perderse.",
+    role: "Diseñé el sitio, lo desarrollé y lo dejé en [[producción]]: estructura multi-sección, menú digital, animaciones con GSAP e [[identidad visual]] alineada al restaurante, lista para usarse en sala y en el día a día.",
+    accent: "#f97316",
+    images: ["/img/gabis_new.png", "/img/gabis_menu.png", "/img/gabis_historia.png"],
+    tags: ["Astro", "React", "Tailwind", "GSAP"],
+    link: "https://gabis.com.mx",
+    linkLabel: "Visitar Sitio",
+    github: "https://github.com/Dexterpol-A21/gabis-astro",
+  },
+  {
+    title: "NoProb",
+    intro: "Agencia de [[software a medida]] y sitios de [[alto rendimiento]]: servicios, metodología y productos internos en [[NoProb Labs]]. La vitrina de cómo trabajo con clientes — del brief al deploy, sin capas de por medio.",
+    story: "La fundé para no quedarme en tickets. Quería [[cerrar el ciclo completo]]: entender el negocio del cliente, diseñar la solución y desplegarla sin pasar la pelota. NoProb es ese vehículo — una agencia chica con [[criterio de producto]], donde el mismo que escucha el problema es quien lo construye y lo pone en producción.",
+    role: "Fundé la agencia y cierro el ciclo en cada encargo: [[discovery]], diseño, desarrollo, rendimiento y [[deploy]]. El sitio comunica servicios, proyectos y la línea de Labs con la misma exigencia que pedimos a los clientes.",
+    accent: "#a1a1aa",
+    images: ["/img/noprob_new.png", "/img/noprob_services.png", "/img/noprob_proyectos.png"],
+    tags: ["Astro", "React", "Tailwind", "Three.js", "GSAP"],
+    link: "https://noprobsystems.com",
+    linkLabel: "Visitar Sitio",
+    github: "https://github.com/Dexterpol-A21/noProb",
+  },
+];
+---
+
+<div class="w-full">
+  {featured.map((p) => (
+    <ProposalEditorial
+      client:load
+      title={p.title}
+      intro={p.intro}
+      story={p.story}
+      role={p.role}
+      accent={p.accent}
+      images={p.images}
+      tags={p.tags}
+      link={p.link}
+      linkLabel={p.linkLabel}
+      github={p.github}
+      lockSnap={true}
+    />
+  ))}
+</div>

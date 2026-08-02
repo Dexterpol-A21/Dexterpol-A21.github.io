@@ -1,0 +1,45 @@
+---
+interface Props {
+  src: string;
+  alt?: string;
+  class?: string;
+}
+const { src, alt = "", class: className = "" } = Astro.props;
+const isPdf = src.toLowerCase().endsWith(".pdf");
+---
+
+{isPdf ? (
+  <div class:list={["cert-pdf-thumb relative w-full h-full bg-zinc-950 overflow-hidden", className]}>
+    {/* Extra width clips the PDF viewer scrollbar; FitH fills the frame */}
+    <iframe
+      src={`${src}#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&view=FitH`}
+      title={alt || "Certificado PDF"}
+      tabindex="-1"
+      loading="lazy"
+      class="cert-pdf-frame absolute top-0 left-0 h-full border-0 pointer-events-none"
+    />
+  </div>
+) : (
+  <img
+    src={src}
+    alt={alt}
+    class:list={["w-full h-full object-cover object-top", className]}
+    loading="lazy"
+  />
+)}
+
+<style>
+  .cert-pdf-thumb {
+    scrollbar-width: none;
+  }
+  .cert-pdf-frame {
+    /* Bleed past the right edge so the internal PDF scrollbar is clipped */
+    width: calc(100% + 28px);
+  }
+  .cert-pdf-thumb::-webkit-scrollbar,
+  .cert-pdf-frame::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+</style>

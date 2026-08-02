@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import SideRays from '../components/SideRays.jsx';
+
+interface Props {
+title: string;
+description?: string;
+}
+
+const { title, description = "Paul Eduardo - Ing. Sistemas y Desarrollador Fullstack." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content={description} />
+<meta name="theme-color" content="#000000" />
+<meta name="color-scheme" content="dark" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://api.fontshare.com/v2/css?f[]=gambetta@500&display=swap" rel="stylesheet" />
+<title>{title}</title>
+<script is:inline>
+  (function () {
+    try {
+      var stored = localStorage.getItem("site-locale");
+      var lang =
+        stored === "en" || stored === "es"
+          ? stored
+          : (navigator.language || "").toLowerCase().indexOf("en") === 0
+            ? "en"
+            : "es";
+      document.documentElement.lang = lang;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body class="bg-black text-zinc-100 selection:bg-white selection:text-black antialiased overflow-hidden h-dvh font-sans">
+<div class="fixed inset-0 z-0 pointer-events-none">
+  <SideRays client:load speed={1.5} opacity={0.85} saturation={0.8} tilt={-15} intensity={2.5} falloff={0.8} rayColor1="#4f4f4f" rayColor2="#ffffff" />
+</div>
+<div id="page-scroll" class="relative z-10 h-dvh overflow-y-auto overflow-x-hidden overscroll-none bg-transparent">
+<slot />
+</div>
+
+<script>
+  document.addEventListener('mousemove', (e) => {
+    const elements = document.querySelectorAll('.glow-border');
+    for (const el of elements) {
+      if (!el) continue;
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      el.style.setProperty('--x', `${x}px`);
+      el.style.setProperty('--y', `${y}px`);
+    }
+  });
+</script>
+</body>
+</html>
