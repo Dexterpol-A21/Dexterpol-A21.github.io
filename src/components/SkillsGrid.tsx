@@ -72,22 +72,22 @@ const skills: { name: string; Icon: IconComp }[] = [
 
 export function SkillsGrid() {
   return (
-    <ul className="flex flex-wrap gap-2 md:gap-2.5">
+    <ul className="flex flex-wrap justify-center md:justify-start gap-2.5 md:gap-2.5">
       {skills.map(({ name, Icon }) => (
         <li
           key={name}
-          className="glow-border flex flex-col items-center justify-center gap-1.5 md:gap-2 border border-white/10 bg-white/[0.03] backdrop-blur-md px-2.5 py-2.5 md:px-3 md:py-3 min-w-[4.75rem] md:min-w-[5.5rem] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]"
+          className="glow-border flex flex-col items-center justify-center gap-1.5 md:gap-2 border border-white/10 bg-white/[0.03] backdrop-blur-md px-3 py-3 md:px-3 md:py-3 min-w-[5.25rem] md:min-w-[5.5rem] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]"
         >
           <Icon
             className={
               name === "Cisco CCNA"
-                ? "h-6 w-6 md:h-7 md:w-7 text-zinc-300"
-                : "h-4 w-4 md:h-5 md:w-5 text-zinc-300"
+                ? "h-7 w-7 md:h-7 md:w-7 text-zinc-300"
+                : "h-5 w-5 md:h-5 md:w-5 text-zinc-300"
             }
             stroke={1.5}
             aria-hidden
           />
-          <span className="text-[9px] md:text-[10px] font-display tracking-wider uppercase text-zinc-400 text-center leading-tight">
+          <span className="text-[11px] md:text-[10px] font-display tracking-wider uppercase text-zinc-400 text-center leading-tight">
             {name}
           </span>
         </li>

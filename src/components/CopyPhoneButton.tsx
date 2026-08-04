@@ -50,7 +50,7 @@ export function CopyPhoneButton({
       onClick={copy}
       aria-label={label}
       title={label}
-      className={`glow-border bg-white/5 border border-white/10 flex items-center justify-center gap-2 px-4 md:px-6 py-2.5 md:py-3 backdrop-blur-md rounded-full text-zinc-300 hover:text-white transition-all duration-500 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)] cursor-pointer ${className}`}
+      className={`glow-border bg-white/5 border border-white/10 inline-flex w-fit items-center gap-2 px-4 py-2 md:px-6 md:py-3 backdrop-blur-md rounded-full text-[13px] text-zinc-300 hover:text-white transition-all duration-500 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)] cursor-pointer ${className}`}
     >
       {copied ? (
         <svg

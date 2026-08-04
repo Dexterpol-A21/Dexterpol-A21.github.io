@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import {
@@ -7,7 +8,9 @@ import {
   IconBriefcase,
   IconMail,
   IconHome,
-  IconCheck,
+  IconTimeline,
+  IconCertificate,
+  IconPuzzle,
 } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -16,7 +19,7 @@ import {
   t,
   type Locale,
 } from "@/lib/i18n";
-import { copyEmailToClipboard } from "@/lib/email";
+import { SITE_EMAIL } from "@/lib/email";
 
 function HeroIcon({
   className,
@@ -40,15 +43,22 @@ function HeroIcon({
   );
 }
 
-const emailLabels = {
-  es: { idle: "Copiar correo", done: "Correo copiado" },
-  en: { idle: "Copy email", done: "Email copied" },
-} as const;
-
 export function DockNav() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [showMenuHint, setShowMenuHint] = useState(true);
   const [locale, setLocale] = useState<Locale>("es");
-  const [emailCopied, setEmailCopied] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const sync = () => setIsDesktop(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     setLocale(getStoredLocale());
@@ -65,7 +75,10 @@ export function DockNav() {
     if (!scroller) return;
 
     const handleScroll = () => {
-      setIsVisible(scroller.scrollTop > 150);
+      const top = scroller.scrollTop;
+      setScrolled(top > 150);
+      // Hint only in the hero zone on mobile
+      setShowMenuHint(top < 100);
     };
 
     scroller.addEventListener("scroll", handleScroll, { passive: true });
@@ -74,18 +87,9 @@ export function DockNav() {
     return () => scroller.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (!emailCopied) return;
-    const timer = window.setTimeout(() => setEmailCopied(false), 1800);
-    return () => window.clearTimeout(timer);
-  }, [emailCopied]);
-
   const copy = t(locale);
-
-  const handleCopyEmail = async () => {
-    const ok = await copyEmailToClipboard();
-    if (ok) setEmailCopied(true);
-  };
+  // Mobile: always visible. Desktop: after scroll.
+  const isVisible = !isDesktop || scrolled;
 
   const links = [
     {
@@ -94,19 +98,34 @@ export function DockNav() {
       href: "#top",
     },
     {
-      title: copy.nav.about,
-      icon: <IconUser className="h-full w-full text-zinc-300" />,
-      href: "#about",
-    },
-    {
       title: copy.nav.work,
       icon: <IconBriefcase className="h-full w-full text-zinc-300" />,
       href: "#work",
     },
     {
+      title: copy.nav.about,
+      icon: <IconUser className="h-full w-full text-zinc-300" />,
+      href: "#about",
+    },
+    {
+      title: copy.nav.experience,
+      icon: <IconTimeline className="h-full w-full text-zinc-300" />,
+      href: "#experiencia",
+    },
+    {
+      title: copy.nav.certifications,
+      icon: <IconCertificate className="h-full w-full text-zinc-300" />,
+      href: "#certificaciones",
+    },
+    {
+      title: copy.nav.extensions,
+      icon: <IconPuzzle className="h-full w-full text-zinc-300" />,
+      href: "#extensions",
+    },
+    {
       title: copy.nav.contact,
       icon: <IconMail className="h-full w-full text-zinc-300" />,
-      href: "mailto:paulconlob@gmail.com",
+      href: "#contact",
     },
   ];
 
@@ -148,41 +167,46 @@ export function DockNav() {
       external: true,
     },
     {
-      title: emailCopied
-        ? emailLabels[locale].done
-        : emailLabels[locale].idle,
-      icon: emailCopied ? (
-        <IconCheck className="h-full w-full text-zinc-300" />
-      ) : (
+      title: "Email",
+      icon: (
         <HeroIcon
           className="h-full w-full text-zinc-300"
           viewBox="0 0 24 24"
           path="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
         />
       ),
-      onClick: handleCopyEmail,
+      href: `mailto:${SITE_EMAIL}`,
     },
   ];
 
-  return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 50, x: "-50%" }}
-          animate={{ opacity: 1, y: 0, x: "-50%" }}
-          exit={{ opacity: 0, y: 50, x: "-50%" }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] left-1/2 z-50 max-w-[calc(100vw-1.5rem)] pointer-events-auto md:bottom-6"
-        >
-          <FloatingDock
-            desktopClassName="bg-white/5 backdrop-blur-xl border border-white/10"
-            mobileClassName=""
-            items={links}
-            trailingItems={socials}
-            endSlot={<LanguageToggle embedded />}
-          />
-        </motion.div>
-      )}
-    </AnimatePresence>
+  const dock = (
+    <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] left-1/2 z-[110] w-max max-w-[calc(100vw-1.5rem)] -translate-x-1/2 overflow-visible pointer-events-none md:bottom-6">
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            key="dock-nav"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="pointer-events-auto overflow-visible"
+          >
+            <FloatingDock
+              desktopClassName="bg-white/5 backdrop-blur-xl border border-white/10"
+              mobileClassName=""
+              items={links}
+              trailingItems={socials}
+              menuHint={
+                !isDesktop && showMenuHint ? copy.nav.menuHint : undefined
+              }
+              endSlot={<LanguageToggle embedded className="hidden md:inline-flex" />}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
+
+  if (!mounted) return null;
+  return createPortal(dock, document.body);
 }

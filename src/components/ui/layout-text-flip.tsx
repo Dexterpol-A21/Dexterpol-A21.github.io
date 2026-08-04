@@ -54,7 +54,7 @@ export const LayoutTextFlip = ({
             transition={{
               duration: 0.5,
             }}
-            className={cn("inline-block whitespace-normal md:whitespace-nowrap")}
+            className={cn("inline-block w-full text-center whitespace-nowrap md:w-auto md:whitespace-nowrap")}
           >
             {words[currentIndex]}
           </motion.span>

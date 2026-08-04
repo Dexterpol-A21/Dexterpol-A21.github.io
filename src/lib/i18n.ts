@@ -7,11 +7,15 @@ export const ui = {
   es: {
     nav: {
       home: "Inicio",
-      about: "Sobre mi",
       work: "Proyectos",
+      about: "Sobre mi",
+      experience: "Experiencia",
+      certifications: "Certificaciones",
+      extensions: "Extensiones",
       contact: "Contacto",
       lang: "Idioma",
       switchTo: "Cambiar a ingles",
+      menuHint: "Menú",
     },
     hero: {
       hello: "Hola, soy",
@@ -34,6 +38,14 @@ export const ui = {
       extensionsLead: "Productos propios en Chrome — fuera del archivo de sitios.",
       contactLead: "Construyamos algo",
       contactLeadMuted: "competente.",
+      contactSub: "Abierto a roles full-time y proyectos selectos.",
+      contactEmail: "Correo",
+      contactPhone: "Telefono",
+      contactLocation: "Ubicacion",
+      contactSocials: "Redes",
+      contactCv: "Curriculum",
+      contactCvAction: "Descargar CV",
+      contactRights: "Todos los derechos reservados.",
     },
     about: {
       location: "Estado de Mexico",
@@ -42,7 +54,8 @@ export const ui = {
       educationMeta: "UVM · Dic 2027",
       languagesLabel: "Idiomas",
       native: "nativo",
-      openTo: "Abierto a roles full-time de Software / Product Engineer · Remoto o hibrido · ES & EN",
+      openTo:
+        "Abierto a roles full-time de Software / Product Engineer · Remoto o hibrido · ES & EN",
       skillsLabel: "Habilidades",
       quote:
         "“No existen problemas complejos, solo sistemas esperando la arquitectura correcta.”",
@@ -66,10 +79,15 @@ export const ui = {
       e2Title: "Interprete bilingue (OPI)",
       e2Role: "Human Quality · Language Line Solutions",
       e2Dates: "Jul 2025 – hoy",
+      e2Lead:
+        "Interpretacion ES / EN en tiempo real para gobierno y corporativos. Terminologia medica, legal y financiera con protocolos PII.",
       e2b1: "— 30+ llamadas/dia · 12+ sectores",
       e2b2: "— Emergencias, crisis y CPS con compostura",
       e2b3: "— Confidencialidad y manejo de PII",
       e2b4: "— Manejo de terminologia medica, legal y financiera",
+      e2StatCalls: "llamadas/dia",
+      e2StatSectors: "sectores",
+      e2StatRealtime: "tiempo real",
       e3Title: "Record Retrieval Agent",
       e3Role: "BISCC · Virtix Health",
       e3Dates: "Ene – jun 2025",
@@ -82,21 +100,38 @@ export const ui = {
       e4b1: "— 60+ inbound/dia · 95% CSAT",
       e4b2: "— Reservas, cuentas, CRM, upselling",
       e4b3: "— Metas de ventas mensuales superadas",
+      view: "Ver →",
+    },
+    certs: {
+      networkingLabel: "Redes · Cisco CCNA",
+      networkingLead:
+        "Ruta CCNA: Introduction to Networks → Switching/Routing/Wireless → Enterprise.",
+      azureLabel: "Cloud · Microsoft Azure",
+      azureLead:
+        "Fundamentos Azure → infraestructura segura → proteccion de plataforma.",
+      securityLabel: "Ciberseguridad",
+      securityLead:
+        "Operaciones de seguridad (CyberOps) y awareness de datos.",
+      otherLabel: "Idioma y formacion",
+      otherLead: "Ingles C2 (EF SET) y curso academico UVM.",
     },
     meta: {
       title: "Paul Eduardo | Desarrollador de Software",
-      description:
-        "Paul Eduardo — Ing. Sistemas y Desarrollador Fullstack.",
+      description: "Paul Eduardo — Ing. Sistemas y Desarrollador Fullstack.",
     },
   },
   en: {
     nav: {
       home: "Home",
-      about: "About",
       work: "Work",
+      about: "About",
+      experience: "Experience",
+      certifications: "Certifications",
+      extensions: "Extensions",
       contact: "Contact",
       lang: "Language",
       switchTo: "Switch to Spanish",
+      menuHint: "Menu",
     },
     hero: {
       hello: "Hello, I'm",
@@ -119,6 +154,14 @@ export const ui = {
       extensionsLead: "Own Chrome products — outside the site archive.",
       contactLead: "Let's build something",
       contactLeadMuted: "solid.",
+      contactSub: "Open to full-time roles and select projects.",
+      contactEmail: "Email",
+      contactPhone: "Phone",
+      contactLocation: "Location",
+      contactSocials: "Social",
+      contactCv: "Resume",
+      contactCvAction: "Download CV",
+      contactRights: "All rights reserved.",
     },
     about: {
       location: "State of Mexico",
@@ -127,7 +170,8 @@ export const ui = {
       educationMeta: "UVM · Dec 2027",
       languagesLabel: "Languages",
       native: "native",
-      openTo: "Open to full-time Software / Product Engineer roles · Remote or hybrid · ES & EN",
+      openTo:
+        "Open to full-time Software / Product Engineer roles · Remote or hybrid · ES & EN",
       skillsLabel: "Skills",
       quote:
         "“There are no complex problems — only systems waiting for the right architecture.”",
@@ -151,13 +195,18 @@ export const ui = {
       e2Title: "Bilingual Interpreter (OPI)",
       e2Role: "Human Quality · Language Line Solutions",
       e2Dates: "Jul 2025 – present",
+      e2Lead:
+        "Real-time ES / EN interpreting for government and corporate clients. Medical, legal, and financial terminology with PII protocols.",
       e2b1: "— 30+ calls/day · 12+ sectors",
       e2b2: "— Emergencies, crisis, and CPS with composure",
       e2b3: "— Confidentiality and PII handling",
       e2b4: "— Handling of medical, legal, and financial terminology",
+      e2StatCalls: "calls/day",
+      e2StatSectors: "sectors",
+      e2StatRealtime: "real time",
       e3Title: "Record Retrieval Agent",
       e3Role: "BISCC · Virtix Health",
-      e3Dates: "Jan – Jun 2025",
+      e3Dates: "Jan – jun 2025",
       e3b1: "— 85+ calls/day · HIPAA · clinic SLAs",
       e3b2: "— −20% errors · +15% first-call resolution",
       e3b3: "— Custom extension: +25–50% data-entry efficiency",
@@ -167,11 +216,23 @@ export const ui = {
       e4b1: "— 60+ inbound/day · 95% CSAT",
       e4b2: "— Bookings, accounts, CRM, upselling",
       e4b3: "— Monthly sales targets exceeded",
+      view: "View →",
+    },
+    certs: {
+      networkingLabel: "Networking · Cisco CCNA",
+      networkingLead:
+        "CCNA path: Introduction to Networks → Switching/Routing/Wireless → Enterprise.",
+      azureLabel: "Cloud · Microsoft Azure",
+      azureLead:
+        "Azure fundamentals → secure infrastructure → platform protection.",
+      securityLabel: "Cybersecurity",
+      securityLead: "Security operations (CyberOps) and data awareness.",
+      otherLabel: "Language & education",
+      otherLead: "English C2 (EF SET) and academic coursework at UVM.",
     },
     meta: {
       title: "Paul Eduardo | Software Developer",
-      description:
-        "Paul Eduardo — Systems Engineer and Fullstack Developer.",
+      description: "Paul Eduardo — Systems Engineer and Fullstack Developer.",
     },
   },
 } as const;
@@ -199,6 +260,38 @@ export function getStoredLocale(): Locale {
   return detectBrowserLocale();
 }
 
+/** Apply all data-i18n* attributes and document meta for a locale. */
+export function applyLocaleToDom(locale: Locale) {
+  if (typeof document === "undefined") return;
+
+  document.documentElement.lang = locale;
+
+  document.querySelectorAll<HTMLElement>("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (!key) return;
+    const value = resolveKey(locale, key);
+    if (value != null) el.textContent = value;
+  });
+
+  document.querySelectorAll<HTMLElement>("[data-i18n-html]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-html");
+    if (!key) return;
+    const value = resolveKey(locale, key);
+    if (value != null) el.innerHTML = value;
+  });
+
+  document.querySelectorAll<HTMLElement>("[data-i18n-es][data-i18n-en]").forEach((el) => {
+    const value = el.getAttribute(`data-i18n-${locale}`);
+    if (value != null) el.textContent = value;
+  });
+
+  const title = ui[locale].meta.title;
+  if (title) document.title = title;
+
+  const desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.setAttribute("content", ui[locale].meta.description);
+}
+
 export function setStoredLocale(locale: Locale) {
   try {
     localStorage.setItem(LOCALE_STORAGE_KEY, locale);
@@ -206,7 +299,7 @@ export function setStoredLocale(locale: Locale) {
     /* ignore */
   }
   if (typeof document !== "undefined") {
-    document.documentElement.lang = locale;
+    applyLocaleToDom(locale);
     document.dispatchEvent(
       new CustomEvent(LOCALE_EVENT, { detail: { locale } }),
     );

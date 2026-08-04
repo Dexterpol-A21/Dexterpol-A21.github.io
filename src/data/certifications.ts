@@ -10,26 +10,30 @@ export type Certification = {
 };
 
 /** Orden pedagogico / de ruta — no solo fecha */
-export const certSections: { id: CertSectionId; label: string; lead: string }[] = [
+export const certSections: {
+  id: CertSectionId;
+  labelKey: string;
+  leadKey: string;
+}[] = [
   {
     id: "networking",
-    label: "Redes · Cisco CCNA",
-    lead: "Ruta CCNA: Introduction to Networks → Switching/Routing/Wireless → Enterprise.",
+    labelKey: "certs.networkingLabel",
+    leadKey: "certs.networkingLead",
   },
   {
     id: "azure",
-    label: "Cloud · Microsoft Azure",
-    lead: "Fundamentos Azure → infraestructura segura → proteccion de plataforma.",
+    labelKey: "certs.azureLabel",
+    leadKey: "certs.azureLead",
   },
   {
     id: "security",
-    label: "Ciberseguridad",
-    lead: "Operaciones de seguridad (CyberOps) y awareness de datos.",
+    labelKey: "certs.securityLabel",
+    leadKey: "certs.securityLead",
   },
   {
     id: "other",
-    label: "Idioma y formacion",
-    lead: "Ingles C2 (EF SET) y curso academico UVM.",
+    labelKey: "certs.otherLabel",
+    leadKey: "certs.otherLead",
   },
 ];
 

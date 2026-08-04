@@ -13,11 +13,14 @@ export function LanguageToggle({
   className,
   compact = false,
   embedded = false,
+  /** One button that cycles ES ↔ EN (for mobile app folder) */
+  cycle = false,
 }: {
   className?: string;
   compact?: boolean;
   /** Sit inside the dock — no outer glass pill */
   embedded?: boolean;
+  cycle?: boolean;
 }) {
   const [locale, setLocale] = useState<Locale>("es");
 
@@ -32,10 +35,39 @@ export function LanguageToggle({
   }, []);
 
   const set = (next: Locale) => {
-    if (next === locale) return;
     setLocale(next);
     setStoredLocale(next);
   };
+
+  const toggle = () => set(locale === "es" ? "en" : "es");
+
+  if (cycle) {
+    return (
+      <button
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggle();
+        }}
+        aria-label={locale === "es" ? "Cambiar a inglés" : "Switch to Spanish"}
+        title={locale === "es" ? "EN" : "ES"}
+        className={cn(
+          "flex w-full flex-col items-center gap-1.5 rounded-2xl px-1 py-1.5 transition-colors active:bg-white/10 cursor-pointer",
+          className,
+        )}
+      >
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1.1rem] border border-white/25 bg-white/15 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
+          <span className="text-[13px] font-display font-semibold tracking-widest text-white">
+            {locale.toUpperCase()}
+          </span>
+        </span>
+        <span className="max-w-[4.75rem] truncate text-center text-[10px] font-display font-medium leading-tight tracking-wide text-white">
+          {locale === "es" ? "Idioma" : "Language"}
+        </span>
+      </button>
+    );
+  }
 
   return (
     <div
@@ -88,7 +120,11 @@ function LangBtn({
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onClick();
+      }}
       aria-pressed={active}
       className={cn(
         "cursor-pointer font-display tracking-widest uppercase rounded-full transition-all duration-500",
